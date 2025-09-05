@@ -1,8 +1,18 @@
-# rpi-top
+# Machine à Sirops Explora
 
 Docker image for running rpi-top (machine à sirops) on a Raspberry Pi.
 
 ## Usage
+
+Clone this repository to your local machine:
+
+
+
+```bash
+git clone https://github.com/heia-fr/machine-a-sirops-explora.git
+
+cd machine-a-sirops-explora
+```
 
 Start the services with Docker Compose:
 

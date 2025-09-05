@@ -48,6 +48,14 @@
         "env": []
     },
     {
+        "id": "1f44ba1f0284b69d",
+        "type": "tab",
+        "label": "Simulation",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "5870d068b3b3fbc8",
         "type": "group",
         "z": "e46298c3f3407f28",
@@ -128,7 +136,6 @@
             "ui-control"
         ],
         "showPathInSidebar": false,
-        "headerContent": "page",
         "navigationStyle": "default",
         "titleBarStyle": "default",
         "showReconnectNotification": true,
@@ -256,7 +263,7 @@
         "page": "6b05643b6577df6f",
         "width": "12",
         "height": 1,
-        "order": 4,
+        "order": 5,
         "showTitle": true,
         "className": "",
         "visible": "true",
@@ -270,7 +277,7 @@
         "page": "6b05643b6577df6f",
         "width": "12",
         "height": 1,
-        "order": 3,
+        "order": 4,
         "showTitle": true,
         "className": "",
         "visible": "true",
@@ -349,6 +356,28 @@
         "width": "12",
         "height": 1,
         "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "dfbf737e1badbf3b",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "@flowfuse/node-red-dashboard": "1.20.1"
+        }
+    },
+    {
+        "id": "be3001cd3246764c",
+        "type": "ui-group",
+        "name": "Simulation",
+        "page": "6b05643b6577df6f",
+        "width": "12",
+        "height": 1,
+        "order": 3,
         "showTitle": true,
         "className": "",
         "visible": "true",
@@ -1000,7 +1029,6 @@
         "name": "Bike Distance",
         "mode": "link",
         "links": [
-            "5bd30a964365268a",
             "e85492afd3b4e89b"
         ],
         "x": 865,
@@ -1292,9 +1320,7 @@
         "className": "",
         "x": 790,
         "y": 300,
-        "wires": [
-            []
-        ]
+        "wires": []
     },
     {
         "id": "726f099d43131b7e",
@@ -1416,9 +1442,7 @@
         "className": "",
         "x": 800,
         "y": 180,
-        "wires": [
-            []
-        ]
+        "wires": []
     },
     {
         "id": "3024089e597cf6af",
@@ -1489,7 +1513,6 @@
         "z": "93b07b015d78d2f3",
         "name": "Bike Distance",
         "links": [
-            "7e14dafc97e0853e",
             "70162b2e7468411f"
         ],
         "x": 255,
@@ -2966,11 +2989,56 @@
         ]
     },
     {
-        "id": "dfbf737e1badbf3b",
-        "type": "global-config",
-        "env": [],
-        "modules": {
-            "@flowfuse/node-red-dashboard": "1.26.0"
-        }
+        "id": "92729288d1867e6b",
+        "type": "ui-slider",
+        "z": "1f44ba1f0284b69d",
+        "group": "be3001cd3246764c",
+        "name": "",
+        "label": "Bike Simulation (# rotations)",
+        "tooltip": "",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "outs": "all",
+        "topic": "topic",
+        "topicType": "msg",
+        "thumbLabel": "true",
+        "showTicks": "always",
+        "min": 0,
+        "max": "200",
+        "step": "5",
+        "className": "",
+        "iconPrepend": "",
+        "iconAppend": "",
+        "color": "",
+        "colorTrack": "",
+        "colorThumb": "",
+        "showTextField": false,
+        "x": 400,
+        "y": 340,
+        "wires": [
+            [
+                "26a16cf901856ac1"
+            ]
+        ]
+    },
+    {
+        "id": "26a16cf901856ac1",
+        "type": "mqtt out",
+        "z": "1f44ba1f0284b69d",
+        "name": "",
+        "topic": "heiafr/ms/bike/0/rotations",
+        "qos": "1",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "681dc25e6534cff6",
+        "x": 790,
+        "y": 340,
+        "wires": []
     }
 ]
