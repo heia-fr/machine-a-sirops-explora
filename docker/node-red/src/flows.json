@@ -1,0 +1,2976 @@
+[
+    {
+        "id": "df94bd946997adf7",
+        "type": "tab",
+        "label": "Global",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "1b31f175e8f2bfb7",
+        "type": "tab",
+        "label": "Contrôles-solo",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "93b07b015d78d2f3",
+        "type": "tab",
+        "label": "Display-solo",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "fedabdae39268dc7",
+        "type": "tab",
+        "label": "Raspberry",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "58d375fa1a53f3dd",
+        "type": "tab",
+        "label": "Pompes",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "e46298c3f3407f28",
+        "type": "tab",
+        "label": "Maintenance",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "5870d068b3b3fbc8",
+        "type": "group",
+        "z": "e46298c3f3407f28",
+        "name": "Balance",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "8704babc913d72ac",
+            "b24824c4b4741da8",
+            "ff89957815c16e58",
+            "24f2dc14ba30fd09",
+            "5a07aebe1f1450f3",
+            "f0938b12cec79fa1",
+            "6f463dd271e2cf8d",
+            "8a12cea1166683f2"
+        ],
+        "x": 134,
+        "y": 119,
+        "w": 652,
+        "h": 202
+    },
+    {
+        "id": "75cd4b84d3a4cbeb",
+        "type": "group",
+        "z": "e46298c3f3407f28",
+        "name": "Bike1",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "982fa4fcd2b64ef4",
+            "075d977633731fdd",
+            "9452d793e01f04f7",
+            "98ef3335e518655e",
+            "77858965987bc67f",
+            "ee351746341cf8f1",
+            "cb3fe40f4416ac69",
+            "b9ce68ebdd3143d4"
+        ],
+        "x": 134,
+        "y": 359,
+        "w": 652,
+        "h": 202
+    },
+    {
+        "id": "704b9f4aabfab6a5",
+        "type": "group",
+        "z": "e46298c3f3407f28",
+        "name": "Bike2",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "9325f4b71271bc7e",
+            "d54d38e54482e819",
+            "abc9827b297bbd5e",
+            "0daa64f04b2aad4d",
+            "846a3a6bec36d004",
+            "46cce37d3d74ba6c",
+            "ec2568664d138cfc",
+            "52e5a736bc257fb5"
+        ],
+        "x": 134,
+        "y": 599,
+        "w": 652,
+        "h": 202
+    },
+    {
+        "id": "9c9a26b23301d87a",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true
+    },
+    {
+        "id": "17420155d1619ebb",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094CE",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "6b05643b6577df6f",
+        "type": "ui-page",
+        "name": "Machine à Sirops - HEIA-FR",
+        "ui": "9c9a26b23301d87a",
+        "path": "/main",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "17420155d1619ebb",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "cd297db1aa9255a7",
+        "type": "ui-group",
+        "name": "Capteurs",
+        "page": "6b05643b6577df6f",
+        "width": "12",
+        "height": "1",
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "681dc25e6534cff6",
+        "type": "mqtt-broker",
+        "name": "Default",
+        "broker": "mosquitto",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "8ad66754c75a467f",
+        "type": "ui-group",
+        "name": "Contrôle",
+        "page": "6b05643b6577df6f",
+        "width": "12",
+        "height": "1",
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "0ce34f26401423f7",
+        "type": "ui-group",
+        "name": "Raspberry Pi (Serveurs)",
+        "page": "6b05643b6577df6f",
+        "width": "12",
+        "height": 1,
+        "order": 4,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "c8e232a0ca6698b9",
+        "type": "ui-group",
+        "name": "Pompes",
+        "page": "6b05643b6577df6f",
+        "width": "12",
+        "height": 1,
+        "order": 3,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "e6f56f53c939edb6",
+        "type": "ui-page",
+        "name": "Maintenance",
+        "ui": "9c9a26b23301d87a",
+        "path": "/maintenance",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "17420155d1619ebb",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 2,
+        "className": "",
+        "visible": true,
+        "disabled": false
+    },
+    {
+        "id": "740e7599ee150aad",
+        "type": "ui-group",
+        "name": "Balance (eau)",
+        "page": "e6f56f53c939edb6",
+        "width": "12",
+        "height": 1,
+        "order": 3,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "639072400a26d618",
+        "type": "ui-group",
+        "name": "Vélo 1 (Rouge)",
+        "page": "e6f56f53c939edb6",
+        "width": "12",
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "869143ee49ab3915",
+        "type": "ui-group",
+        "name": "Vélo 2 (Bleu)",
+        "page": "e6f56f53c939edb6",
+        "width": "12",
+        "height": 1,
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "6d9c84a7346536ad",
+        "type": "ui-template",
+        "z": "df94bd946997adf7",
+        "group": "",
+        "page": "",
+        "ui": "9c9a26b23301d87a",
+        "name": "Styles",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": ".bigfont button {\n    font-size: xx-large;\n    font-weight: bold;\n}\n\n.stdout {\n    padding: 1em;\n    border-style: dotted;\n}",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "site:style",
+        "className": "",
+        "x": 210,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "247b2d9061a865a6",
+        "type": "ui-button",
+        "z": "1b31f175e8f2bfb7",
+        "group": "8ad66754c75a467f",
+        "name": "",
+        "label": "Démarrer",
+        "order": 1,
+        "width": "12",
+        "height": "2",
+        "emulateClick": true,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "bigfont",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "topicType": "str",
+        "buttonColor": "green",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 340,
+        "y": 340,
+        "wires": [
+            [
+                "1852940ce5304bef",
+                "335fb19a0773bf0a",
+                "fcb1909503b0d17a",
+                "b86941baeed0b2b0",
+                "b1458cf22522aa0b",
+                "bb66bd4c98114e3b",
+                "1322fb2fca9f603d"
+            ]
+        ]
+    },
+    {
+        "id": "df8a527c4243b8f9",
+        "type": "mqtt out",
+        "z": "1b31f175e8f2bfb7",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "681dc25e6534cff6",
+        "x": 1010,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "1852940ce5304bef",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "Stop bike 1",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "heiafr/ms/bike/1/stop",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "1",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 690,
+        "y": 280,
+        "wires": [
+            [
+                "df8a527c4243b8f9"
+            ]
+        ]
+    },
+    {
+        "id": "335fb19a0773bf0a",
+        "type": "delay",
+        "z": "1b31f175e8f2bfb7",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 500,
+        "y": 600,
+        "wires": [
+            [
+                "32927b15a7c7316f",
+                "ee5913f4d1abc08b"
+            ]
+        ]
+    },
+    {
+        "id": "32927b15a7c7316f",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "Start bike 1",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "heiafr/ms/bike/1/start",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "1",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 690,
+        "y": 580,
+        "wires": [
+            [
+                "df8a527c4243b8f9"
+            ]
+        ]
+    },
+    {
+        "id": "fcb1909503b0d17a",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "Stop chrono",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "heiafr/ms/top/chrono/stop",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "1",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 690,
+        "y": 220,
+        "wires": [
+            [
+                "df8a527c4243b8f9"
+            ]
+        ]
+    },
+    {
+        "id": "b86941baeed0b2b0",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "Hide Score",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "heiafr/ms/top/score/hide",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "1",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 690,
+        "y": 360,
+        "wires": [
+            [
+                "df8a527c4243b8f9"
+            ]
+        ]
+    },
+    {
+        "id": "b1458cf22522aa0b",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "Start animation",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "heiafr/ms/top/video/play",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"id\":\"animation\",\"src\":\"movie/Panel-256x384-COMPTEUR-START.mp4\",\"duration\":6,\"fade-out\":1,\"fade-in\":0}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 700,
+        "y": 480,
+        "wires": [
+            [
+                "df8a527c4243b8f9"
+            ]
+        ]
+    },
+    {
+        "id": "ee5913f4d1abc08b",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "Start chrono",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "heiafr/ms/top/chrono/start",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "1",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 690,
+        "y": 660,
+        "wires": [
+            [
+                "df8a527c4243b8f9"
+            ]
+        ]
+    },
+    {
+        "id": "32cf3652b6a7bc17",
+        "type": "ui-button",
+        "z": "1b31f175e8f2bfb7",
+        "group": "8ad66754c75a467f",
+        "name": "",
+        "label": "Reset",
+        "order": 2,
+        "width": "0",
+        "height": "0",
+        "emulateClick": true,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "topicType": "str",
+        "buttonColor": "red",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 330,
+        "y": 1060,
+        "wires": [
+            [
+                "82146e92b29b59d0",
+                "f440965eca287080",
+                "de6aea58040d8a2b",
+                "1bd1cb893f9e866d",
+                "4cdb38037a2bcd82",
+                "ecc2bfcc9d095bde"
+            ]
+        ]
+    },
+    {
+        "id": "264d8d59c65e843a",
+        "type": "mqtt out",
+        "z": "1b31f175e8f2bfb7",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "681dc25e6534cff6",
+        "x": 1010,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "82146e92b29b59d0",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "Stop bike 1",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "heiafr/ms/bike/1/stop",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "1",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 690,
+        "y": 1000,
+        "wires": [
+            [
+                "264d8d59c65e843a"
+            ]
+        ]
+    },
+    {
+        "id": "f440965eca287080",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "Reset chrono",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "heiafr/ms/top/chrono/reset",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "1",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 700,
+        "y": 940,
+        "wires": [
+            [
+                "264d8d59c65e843a"
+            ]
+        ]
+    },
+    {
+        "id": "de6aea58040d8a2b",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "Hide Score",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "heiafr/ms/top/score/hide",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "1",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 690,
+        "y": 1100,
+        "wires": [
+            [
+                "264d8d59c65e843a"
+            ]
+        ]
+    },
+    {
+        "id": "1bd1cb893f9e866d",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "Stop animation",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "heiafr/ms/top/video/stop",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"id\":\"animation\",\"fade-out\":1}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 700,
+        "y": 1180,
+        "wires": [
+            [
+                "264d8d59c65e843a"
+            ]
+        ]
+    },
+    {
+        "id": "91226a2392b01a7b",
+        "type": "inject",
+        "z": "1b31f175e8f2bfb7",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1",
+        "payloadType": "num",
+        "x": 330,
+        "y": 940,
+        "wires": [
+            [
+                "32cf3652b6a7bc17"
+            ]
+        ]
+    },
+    {
+        "id": "9bc75109b8c13a7e",
+        "type": "inject",
+        "z": "1b31f175e8f2bfb7",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1",
+        "payloadType": "num",
+        "x": 350,
+        "y": 240,
+        "wires": [
+            [
+                "247b2d9061a865a6"
+            ]
+        ]
+    },
+    {
+        "id": "7bcb5300e4a3e1a6",
+        "type": "mqtt in",
+        "z": "1b31f175e8f2bfb7",
+        "name": "Bike rotation",
+        "topic": "heiafr/ms/bike/+/rotations",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "681dc25e6534cff6",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 370,
+        "y": 1340,
+        "wires": [
+            [
+                "6d3a224af1693745"
+            ]
+        ]
+    },
+    {
+        "id": "6d3a224af1693745",
+        "type": "function",
+        "z": "1b31f175e8f2bfb7",
+        "name": "function 5",
+        "func": "var distance = Number(msg.payload) * 0.7 * Math.PI\nvar percent = Math.round(distance * 100 / 300)\n\nvar msg2 = null\n\nif (percent >= 100) {\n    percent = 100\n    if (flow.get(\"running\")) {\n        flow.set(\"running\", false)\n        msg2 = {\n            \"winner\": 1\n        }\n    }\n}\n\nvar msg1 = {\n    \"topic\": \"heiafr/ms/top/gauge\",\n    \"payload\": JSON.stringify(\n        {\n            \"value\" : percent\n        }\n    )\n}\n\n\nreturn [msg1, msg2]",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 1340,
+        "wires": [
+            [
+                "252d787468234489",
+                "70162b2e7468411f"
+            ],
+            [
+                "5c1bd8e936886d71",
+                "db438a12915533c3",
+                "96bfc770016305c0"
+            ]
+        ]
+    },
+    {
+        "id": "252d787468234489",
+        "type": "mqtt out",
+        "z": "1b31f175e8f2bfb7",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "681dc25e6534cff6",
+        "x": 1490,
+        "y": 1340,
+        "wires": []
+    },
+    {
+        "id": "70162b2e7468411f",
+        "type": "link out",
+        "z": "1b31f175e8f2bfb7",
+        "name": "Bike Distance",
+        "mode": "link",
+        "links": [
+            "5bd30a964365268a",
+            "e85492afd3b4e89b"
+        ],
+        "x": 865,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "96bfc770016305c0",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "Start animation",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "heiafr/ms/top/video/play",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"id\":\"animation\",\"src\":\"movie/Panel-256x384-WINNER-SOLO.mp4\",\"fade-in\":1}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 960,
+        "y": 1600,
+        "wires": [
+            [
+                "252d787468234489"
+            ]
+        ]
+    },
+    {
+        "id": "5c1bd8e936886d71",
+        "type": "delay",
+        "z": "1b31f175e8f2bfb7",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 940,
+        "y": 1680,
+        "wires": [
+            [
+                "93593d9eb3af6931"
+            ]
+        ]
+    },
+    {
+        "id": "93593d9eb3af6931",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "Show Score",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "heiafr/ms/top/score/show",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "1",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1170,
+        "y": 1680,
+        "wires": [
+            [
+                "252d787468234489"
+            ]
+        ]
+    },
+    {
+        "id": "db438a12915533c3",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "Stop chrono",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "heiafr/ms/top/chrono/stop",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "1",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 950,
+        "y": 1520,
+        "wires": [
+            [
+                "252d787468234489"
+            ]
+        ]
+    },
+    {
+        "id": "4cdb38037a2bcd82",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "Reset gauge",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "heiafr/ms/bike/1/rotations",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 690,
+        "y": 840,
+        "wires": [
+            [
+                "264d8d59c65e843a"
+            ]
+        ]
+    },
+    {
+        "id": "bb66bd4c98114e3b",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "Reset gauge",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "heiafr/ms/bike/1/rotations",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 690,
+        "y": 120,
+        "wires": [
+            [
+                "df8a527c4243b8f9"
+            ]
+        ]
+    },
+    {
+        "id": "1322fb2fca9f603d",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "running",
+                "pt": "flow",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 680,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ecc2bfcc9d095bde",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "running",
+                "pt": "flow",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 720,
+        "y": 1240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ad4208024022ceec",
+        "type": "ui-gauge",
+        "z": "93b07b015d78d2f3",
+        "name": "",
+        "group": "cd297db1aa9255a7",
+        "order": 3,
+        "width": "6",
+        "height": "5",
+        "gtype": "gauge-34",
+        "gstyle": "needle",
+        "title": "Niveau d'eau",
+        "units": "%",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#ea5353"
+            },
+            {
+                "from": "10",
+                "color": "#ffc800"
+            },
+            {
+                "from": "25",
+                "color": "#00b3ff"
+            }
+        ],
+        "min": 0,
+        "max": "100",
+        "sizeThickness": "32",
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 790,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "726f099d43131b7e",
+        "type": "function",
+        "z": "93b07b015d78d2f3",
+        "name": "Weight to %",
+        "func": "const empty = 935000\nconst full = 3578000\nconst v = Number(msg.payload)\n\nvar res = Math.round((v - empty) * 100 / (full - empty))\nif (res > 100) res = 100\nif (res < 0)   res = 0\n\nmsg.payload = res\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 610,
+        "y": 300,
+        "wires": [
+            [
+                "ad4208024022ceec"
+            ]
+        ]
+    },
+    {
+        "id": "22e668871c4af726",
+        "type": "mqtt in",
+        "z": "93b07b015d78d2f3",
+        "name": "",
+        "topic": "heiafr/ms/water-level/value",
+        "qos": "1",
+        "datatype": "auto-detect",
+        "broker": "681dc25e6534cff6",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 350,
+        "y": 300,
+        "wires": [
+            [
+                "726f099d43131b7e"
+            ]
+        ]
+    },
+    {
+        "id": "ddbe55c932bed3f1",
+        "type": "mqtt in",
+        "z": "93b07b015d78d2f3",
+        "name": "",
+        "topic": "heiafr/ms/water-level/state",
+        "qos": "1",
+        "datatype": "auto-detect",
+        "broker": "681dc25e6534cff6",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 350,
+        "y": 520,
+        "wires": [
+            [
+                "afc55c9049c3c6da"
+            ]
+        ]
+    },
+    {
+        "id": "afc55c9049c3c6da",
+        "type": "ui-text",
+        "z": "93b07b015d78d2f3",
+        "group": "cd297db1aa9255a7",
+        "order": 1,
+        "width": "6",
+        "height": "1",
+        "name": "",
+        "label": "Etat de la balance",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "x": 810,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "cc03134b74f3cccb",
+        "type": "ui-gauge",
+        "z": "93b07b015d78d2f3",
+        "name": "Distance Velo 1",
+        "group": "cd297db1aa9255a7",
+        "order": 4,
+        "width": "6",
+        "height": "5",
+        "gtype": "gauge-34",
+        "gstyle": "needle",
+        "title": "Velo",
+        "units": "%",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#007cb7"
+            },
+            {
+                "from": "100",
+                "color": "#007cb7"
+            }
+        ],
+        "min": 0,
+        "max": "100",
+        "sizeThickness": "32",
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 800,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3024089e597cf6af",
+        "type": "mqtt in",
+        "z": "93b07b015d78d2f3",
+        "name": "",
+        "topic": "heiafr/ms/bike/1/state",
+        "qos": "1",
+        "datatype": "auto-detect",
+        "broker": "681dc25e6534cff6",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 340,
+        "y": 400,
+        "wires": [
+            [
+                "83b92324c421a76c"
+            ]
+        ]
+    },
+    {
+        "id": "83b92324c421a76c",
+        "type": "ui-text",
+        "z": "93b07b015d78d2f3",
+        "group": "cd297db1aa9255a7",
+        "order": 2,
+        "width": "6",
+        "height": "1",
+        "name": "",
+        "label": "Etat du vélo",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "x": 790,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "3b75792c540c5ade",
+        "type": "function",
+        "z": "93b07b015d78d2f3",
+        "name": "function 4",
+        "func": "msg.payload = JSON.parse(msg.payload)[\"value\"]\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 180,
+        "wires": [
+            [
+                "cc03134b74f3cccb"
+            ]
+        ]
+    },
+    {
+        "id": "e85492afd3b4e89b",
+        "type": "link in",
+        "z": "93b07b015d78d2f3",
+        "name": "Bike Distance",
+        "links": [
+            "7e14dafc97e0853e",
+            "70162b2e7468411f"
+        ],
+        "x": 255,
+        "y": 180,
+        "wires": [
+            [
+                "3b75792c540c5ade"
+            ]
+        ]
+    },
+    {
+        "id": "6743c234e1fdb89d",
+        "type": "ui-button",
+        "z": "fedabdae39268dc7",
+        "group": "0ce34f26401423f7",
+        "name": "",
+        "label": "Eteindre les Raspberry Pi",
+        "order": 1,
+        "width": "6",
+        "height": "1",
+        "emulateClick": true,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "3",
+        "payloadType": "str",
+        "topic": "heiafr/ms/controller/button",
+        "topicType": "str",
+        "buttonColor": "red",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 190,
+        "y": 380,
+        "wires": [
+            [
+                "26bc7840f1a81bc8",
+                "c40756398ecbf586"
+            ]
+        ]
+    },
+    {
+        "id": "a9bc1d7047bbdf17",
+        "type": "ui-button",
+        "z": "fedabdae39268dc7",
+        "group": "0ce34f26401423f7",
+        "name": "",
+        "label": "Redémarrer les Raspberry Pi",
+        "order": 2,
+        "width": "6",
+        "height": "1",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "3",
+        "payloadType": "str",
+        "topic": "heiafr/ms/controller/button",
+        "topicType": "str",
+        "buttonColor": "red",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 200,
+        "y": 500,
+        "wires": [
+            [
+                "324320e855a399b2",
+                "40db41b2c9e3bc26"
+            ]
+        ]
+    },
+    {
+        "id": "26bc7840f1a81bc8",
+        "type": "change",
+        "z": "fedabdae39268dc7",
+        "name": "Shutdown top",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "heiafr/ms/rpi/top/shutter/shutdown",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "now",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 640,
+        "y": 340,
+        "wires": [
+            [
+                "e617ae5a2e82e321"
+            ]
+        ]
+    },
+    {
+        "id": "7ab83635cccaa63d",
+        "type": "change",
+        "z": "fedabdae39268dc7",
+        "name": "Shutdown commander",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "heiafr/ms/rpi/cmd/shutter/shutdown",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "now",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 620,
+        "y": 400,
+        "wires": [
+            [
+                "e617ae5a2e82e321"
+            ]
+        ]
+    },
+    {
+        "id": "324320e855a399b2",
+        "type": "change",
+        "z": "fedabdae39268dc7",
+        "name": "Reboot top",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "heiafr/ms/rpi/top/shutter/reboot",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "now",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 650,
+        "y": 480,
+        "wires": [
+            [
+                "e617ae5a2e82e321"
+            ]
+        ]
+    },
+    {
+        "id": "9c912d0adc802a65",
+        "type": "change",
+        "z": "fedabdae39268dc7",
+        "name": "Reboot commander",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "heiafr/ms/rpi/cmd/shutter/reboot",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "now",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 640,
+        "y": 540,
+        "wires": [
+            [
+                "e617ae5a2e82e321"
+            ]
+        ]
+    },
+    {
+        "id": "c40756398ecbf586",
+        "type": "delay",
+        "z": "fedabdae39268dc7",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "3",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 420,
+        "y": 400,
+        "wires": [
+            [
+                "7ab83635cccaa63d"
+            ]
+        ]
+    },
+    {
+        "id": "40db41b2c9e3bc26",
+        "type": "delay",
+        "z": "fedabdae39268dc7",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "3",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 420,
+        "y": 540,
+        "wires": [
+            [
+                "9c912d0adc802a65"
+            ]
+        ]
+    },
+    {
+        "id": "e617ae5a2e82e321",
+        "type": "mqtt out",
+        "z": "fedabdae39268dc7",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "681dc25e6534cff6",
+        "x": 850,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "2efa5baadf212993",
+        "type": "ui-button",
+        "z": "58d375fa1a53f3dd",
+        "group": "c8e232a0ca6698b9",
+        "name": "",
+        "label": "Reset des pompes",
+        "order": 7,
+        "width": "6",
+        "height": "1",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "9",
+        "payloadType": "str",
+        "topic": "heiafr/ms/controller/button",
+        "topicType": "str",
+        "buttonColor": "red",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 370,
+        "y": 120,
+        "wires": [
+            [
+                "e9bf53cf1075a04b"
+            ]
+        ]
+    },
+    {
+        "id": "b2d58858c8b8cc1b",
+        "type": "ui-button",
+        "z": "58d375fa1a53f3dd",
+        "group": "c8e232a0ca6698b9",
+        "name": "",
+        "label": "Nettoyage / Rincage",
+        "order": 8,
+        "width": "6",
+        "height": "1",
+        "emulateClick": true,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "8",
+        "payloadType": "str",
+        "topic": "heiafr/ms/controller/button",
+        "topicType": "str",
+        "buttonColor": "blue",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 380,
+        "y": 180,
+        "wires": [
+            [
+                "e9bf53cf1075a04b"
+            ]
+        ]
+    },
+    {
+        "id": "e9bf53cf1075a04b",
+        "type": "mqtt out",
+        "z": "58d375fa1a53f3dd",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "681dc25e6534cff6",
+        "x": 810,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "c9b4caeb7a495554",
+        "type": "ui-button",
+        "z": "58d375fa1a53f3dd",
+        "group": "c8e232a0ca6698b9",
+        "name": "",
+        "label": "Sirop fraise",
+        "order": 1,
+        "width": "4",
+        "height": "1",
+        "emulateClick": true,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "1",
+        "payloadType": "str",
+        "topic": "heiafr/ms/controller/button",
+        "topicType": "str",
+        "buttonColor": "orange",
+        "textColor": "white",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 350,
+        "y": 260,
+        "wires": [
+            [
+                "e9bf53cf1075a04b"
+            ]
+        ]
+    },
+    {
+        "id": "1c352e91771c0ee6",
+        "type": "ui-button",
+        "z": "58d375fa1a53f3dd",
+        "group": "c8e232a0ca6698b9",
+        "name": "",
+        "label": "Sirop pêches",
+        "order": 2,
+        "width": "4",
+        "height": "1",
+        "emulateClick": true,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "2",
+        "payloadType": "str",
+        "topic": "heiafr/ms/controller/button",
+        "topicType": "str",
+        "buttonColor": "orange",
+        "textColor": "white",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 350,
+        "y": 320,
+        "wires": [
+            [
+                "e9bf53cf1075a04b"
+            ]
+        ]
+    },
+    {
+        "id": "91ef683dec196a58",
+        "type": "ui-button",
+        "z": "58d375fa1a53f3dd",
+        "group": "c8e232a0ca6698b9",
+        "name": "",
+        "label": "Sirop fruits de la passion",
+        "order": 3,
+        "width": "4",
+        "height": "1",
+        "emulateClick": true,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "3",
+        "payloadType": "str",
+        "topic": "heiafr/ms/controller/button",
+        "topicType": "str",
+        "buttonColor": "orange",
+        "textColor": "white",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 390,
+        "y": 380,
+        "wires": [
+            [
+                "e9bf53cf1075a04b"
+            ]
+        ]
+    },
+    {
+        "id": "d220fbe0751257ad",
+        "type": "delay",
+        "z": "58d375fa1a53f3dd",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 140,
+        "y": 560,
+        "wires": [
+            [
+                "63896e809792de9a",
+                "1c352e91771c0ee6"
+            ]
+        ]
+    },
+    {
+        "id": "63896e809792de9a",
+        "type": "delay",
+        "z": "58d375fa1a53f3dd",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 180,
+        "y": 640,
+        "wires": [
+            [
+                "91ef683dec196a58"
+            ]
+        ]
+    },
+    {
+        "id": "a7033d7f579cb641",
+        "type": "ui-button",
+        "z": "58d375fa1a53f3dd",
+        "group": "c8e232a0ca6698b9",
+        "name": "",
+        "label": "3 sirops",
+        "order": 4,
+        "width": "12",
+        "height": "1",
+        "emulateClick": true,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "3",
+        "payloadType": "str",
+        "topic": "heiafr/ms/controller/button",
+        "topicType": "str",
+        "buttonColor": "blue",
+        "textColor": "white",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 100,
+        "y": 460,
+        "wires": [
+            [
+                "d220fbe0751257ad",
+                "c9b4caeb7a495554"
+            ]
+        ]
+    },
+    {
+        "id": "cf64c2ac43fbb434",
+        "type": "ui-button",
+        "z": "58d375fa1a53f3dd",
+        "group": "c8e232a0ca6698b9",
+        "name": "",
+        "label": "3 sirops (en boucle)",
+        "order": 5,
+        "width": "12",
+        "height": "1",
+        "emulateClick": true,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "1",
+        "payloadType": "str",
+        "topic": "heiafr/ms/controller/button",
+        "topicType": "str",
+        "buttonColor": "blue",
+        "textColor": "white",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 130,
+        "y": 240,
+        "wires": [
+            [
+                "42107ba46a64c325"
+            ]
+        ]
+    },
+    {
+        "id": "42107ba46a64c325",
+        "type": "trigger",
+        "z": "58d375fa1a53f3dd",
+        "name": "",
+        "op1": "1",
+        "op2": "0",
+        "op1type": "str",
+        "op2type": "str",
+        "duration": "-30",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "0",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 130,
+        "y": 320,
+        "wires": [
+            [
+                "a7033d7f579cb641"
+            ]
+        ]
+    },
+    {
+        "id": "a8cb7245018a9320",
+        "type": "ui-button",
+        "z": "58d375fa1a53f3dd",
+        "group": "c8e232a0ca6698b9",
+        "name": "",
+        "label": "3 sirops STOP",
+        "order": 6,
+        "width": "12",
+        "height": "1",
+        "emulateClick": true,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "0",
+        "payloadType": "str",
+        "topic": "heiafr/ms/controller/button",
+        "topicType": "str",
+        "buttonColor": "red",
+        "textColor": "white",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 120,
+        "y": 180,
+        "wires": [
+            [
+                "42107ba46a64c325"
+            ]
+        ]
+    },
+    {
+        "id": "8704babc913d72ac",
+        "type": "ui-button",
+        "z": "e46298c3f3407f28",
+        "g": "5870d068b3b3fbc8",
+        "group": "740e7599ee150aad",
+        "name": "Update Firmware",
+        "label": "Mise à jour du firmware",
+        "order": 3,
+        "width": "3",
+        "height": "1",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "{\"url\":\"https://gitlab.forge.hefr.ch/machine-a-sirops/water-scale/-/releases/permalink/latest/downloads/build/water-level-sensor.bin\"}",
+        "payloadType": "json",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "red",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 250,
+        "y": 240,
+        "wires": [
+            [
+                "8a12cea1166683f2"
+            ]
+        ]
+    },
+    {
+        "id": "b24824c4b4741da8",
+        "type": "http request",
+        "z": "e46298c3f3407f28",
+        "g": "5870d068b3b3fbc8",
+        "name": "Info",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://192.168.0.111/info",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 430,
+        "y": 160,
+        "wires": [
+            [
+                "24f2dc14ba30fd09"
+            ]
+        ]
+    },
+    {
+        "id": "ff89957815c16e58",
+        "type": "ui-button",
+        "z": "e46298c3f3407f28",
+        "g": "5870d068b3b3fbc8",
+        "group": "740e7599ee150aad",
+        "name": "Info",
+        "label": "Info",
+        "order": 1,
+        "width": "3",
+        "height": "1",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "blue",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 210,
+        "y": 160,
+        "wires": [
+            [
+                "b24824c4b4741da8"
+            ]
+        ]
+    },
+    {
+        "id": "24f2dc14ba30fd09",
+        "type": "ui-text",
+        "z": "e46298c3f3407f28",
+        "g": "5870d068b3b3fbc8",
+        "group": "740e7599ee150aad",
+        "order": 5,
+        "width": "12",
+        "height": "3",
+        "name": "output",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": true,
+        "className": "stdout",
+        "x": 710,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "5a07aebe1f1450f3",
+        "type": "ui-button",
+        "z": "e46298c3f3407f28",
+        "g": "5870d068b3b3fbc8",
+        "group": "740e7599ee150aad",
+        "name": "Clear",
+        "label": "Clear",
+        "order": 4,
+        "width": "3",
+        "height": "1",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "green",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 210,
+        "y": 280,
+        "wires": [
+            [
+                "24f2dc14ba30fd09"
+            ]
+        ]
+    },
+    {
+        "id": "f0938b12cec79fa1",
+        "type": "http request",
+        "z": "e46298c3f3407f28",
+        "g": "5870d068b3b3fbc8",
+        "name": "Reset",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://192.168.0.111/reset",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 430,
+        "y": 200,
+        "wires": [
+            [
+                "24f2dc14ba30fd09"
+            ]
+        ]
+    },
+    {
+        "id": "6f463dd271e2cf8d",
+        "type": "ui-button",
+        "z": "e46298c3f3407f28",
+        "g": "5870d068b3b3fbc8",
+        "group": "740e7599ee150aad",
+        "name": "Reset",
+        "label": "Reset",
+        "order": 2,
+        "width": "3",
+        "height": "1",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "red",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 210,
+        "y": 200,
+        "wires": [
+            [
+                "f0938b12cec79fa1"
+            ]
+        ]
+    },
+    {
+        "id": "8a12cea1166683f2",
+        "type": "http request",
+        "z": "e46298c3f3407f28",
+        "g": "5870d068b3b3fbc8",
+        "name": "Firmare update",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://192.168.0.111/firmware-upgrade",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 460,
+        "y": 240,
+        "wires": [
+            [
+                "24f2dc14ba30fd09"
+            ]
+        ]
+    },
+    {
+        "id": "982fa4fcd2b64ef4",
+        "type": "ui-button",
+        "z": "e46298c3f3407f28",
+        "g": "75cd4b84d3a4cbeb",
+        "group": "639072400a26d618",
+        "name": "Update Firmware",
+        "label": "Mise à jour du firmware",
+        "order": 3,
+        "width": "3",
+        "height": "1",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "{\"url\":\"https://gitlab.forge.hefr.ch/machine-a-sirops/speedometer/-/releases/permalink/latest/downloads/build/speedometer.bin\"}",
+        "payloadType": "json",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "red",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 250,
+        "y": 480,
+        "wires": [
+            [
+                "b9ce68ebdd3143d4"
+            ]
+        ]
+    },
+    {
+        "id": "075d977633731fdd",
+        "type": "http request",
+        "z": "e46298c3f3407f28",
+        "g": "75cd4b84d3a4cbeb",
+        "name": "Info",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://192.168.0.214/info",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 430,
+        "y": 400,
+        "wires": [
+            [
+                "98ef3335e518655e"
+            ]
+        ]
+    },
+    {
+        "id": "9452d793e01f04f7",
+        "type": "ui-button",
+        "z": "e46298c3f3407f28",
+        "g": "75cd4b84d3a4cbeb",
+        "group": "639072400a26d618",
+        "name": "Info",
+        "label": "Info",
+        "order": 1,
+        "width": "3",
+        "height": "1",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "blue",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 210,
+        "y": 400,
+        "wires": [
+            [
+                "075d977633731fdd"
+            ]
+        ]
+    },
+    {
+        "id": "98ef3335e518655e",
+        "type": "ui-text",
+        "z": "e46298c3f3407f28",
+        "g": "75cd4b84d3a4cbeb",
+        "group": "639072400a26d618",
+        "order": 5,
+        "width": "12",
+        "height": "3",
+        "name": "output",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": true,
+        "className": "stdout",
+        "x": 710,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "77858965987bc67f",
+        "type": "ui-button",
+        "z": "e46298c3f3407f28",
+        "g": "75cd4b84d3a4cbeb",
+        "group": "639072400a26d618",
+        "name": "Clear",
+        "label": "Clear",
+        "order": 4,
+        "width": "3",
+        "height": "1",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "green",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 210,
+        "y": 520,
+        "wires": [
+            [
+                "98ef3335e518655e"
+            ]
+        ]
+    },
+    {
+        "id": "ee351746341cf8f1",
+        "type": "http request",
+        "z": "e46298c3f3407f28",
+        "g": "75cd4b84d3a4cbeb",
+        "name": "Reset",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://192.168.0.214/reset",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 430,
+        "y": 440,
+        "wires": [
+            [
+                "98ef3335e518655e"
+            ]
+        ]
+    },
+    {
+        "id": "cb3fe40f4416ac69",
+        "type": "ui-button",
+        "z": "e46298c3f3407f28",
+        "g": "75cd4b84d3a4cbeb",
+        "group": "639072400a26d618",
+        "name": "Reset",
+        "label": "Reset",
+        "order": 2,
+        "width": "3",
+        "height": "1",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "red",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 210,
+        "y": 440,
+        "wires": [
+            [
+                "ee351746341cf8f1"
+            ]
+        ]
+    },
+    {
+        "id": "b9ce68ebdd3143d4",
+        "type": "http request",
+        "z": "e46298c3f3407f28",
+        "g": "75cd4b84d3a4cbeb",
+        "name": "Firmare update",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://192.168.0.214/firmware-upgrade",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 460,
+        "y": 480,
+        "wires": [
+            [
+                "98ef3335e518655e"
+            ]
+        ]
+    },
+    {
+        "id": "9325f4b71271bc7e",
+        "type": "ui-button",
+        "z": "e46298c3f3407f28",
+        "g": "704b9f4aabfab6a5",
+        "group": "869143ee49ab3915",
+        "name": "Update Firmware",
+        "label": "Mise à jour du firmware",
+        "order": 3,
+        "width": "3",
+        "height": "1",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "{\"url\":\"https://gitlab.forge.hefr.ch/machine-a-sirops/speedometer/-/releases/permalink/latest/downloads/build/speedometer.bin\"}",
+        "payloadType": "json",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "red",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 250,
+        "y": 720,
+        "wires": [
+            [
+                "52e5a736bc257fb5"
+            ]
+        ]
+    },
+    {
+        "id": "d54d38e54482e819",
+        "type": "http request",
+        "z": "e46298c3f3407f28",
+        "g": "704b9f4aabfab6a5",
+        "name": "Info",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://192.168.0.216/info",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 430,
+        "y": 640,
+        "wires": [
+            [
+                "0daa64f04b2aad4d"
+            ]
+        ]
+    },
+    {
+        "id": "abc9827b297bbd5e",
+        "type": "ui-button",
+        "z": "e46298c3f3407f28",
+        "g": "704b9f4aabfab6a5",
+        "group": "869143ee49ab3915",
+        "name": "Info",
+        "label": "Info",
+        "order": 1,
+        "width": "3",
+        "height": "1",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "blue",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 210,
+        "y": 640,
+        "wires": [
+            [
+                "d54d38e54482e819"
+            ]
+        ]
+    },
+    {
+        "id": "0daa64f04b2aad4d",
+        "type": "ui-text",
+        "z": "e46298c3f3407f28",
+        "g": "704b9f4aabfab6a5",
+        "group": "869143ee49ab3915",
+        "order": 5,
+        "width": "12",
+        "height": "3",
+        "name": "output",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": true,
+        "className": "stdout",
+        "x": 710,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "846a3a6bec36d004",
+        "type": "ui-button",
+        "z": "e46298c3f3407f28",
+        "g": "704b9f4aabfab6a5",
+        "group": "869143ee49ab3915",
+        "name": "Clear",
+        "label": "Clear",
+        "order": 4,
+        "width": "3",
+        "height": "1",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "green",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 210,
+        "y": 760,
+        "wires": [
+            [
+                "0daa64f04b2aad4d"
+            ]
+        ]
+    },
+    {
+        "id": "46cce37d3d74ba6c",
+        "type": "http request",
+        "z": "e46298c3f3407f28",
+        "g": "704b9f4aabfab6a5",
+        "name": "Reset",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://192.168.0.216/reset",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 430,
+        "y": 680,
+        "wires": [
+            [
+                "0daa64f04b2aad4d"
+            ]
+        ]
+    },
+    {
+        "id": "ec2568664d138cfc",
+        "type": "ui-button",
+        "z": "e46298c3f3407f28",
+        "g": "704b9f4aabfab6a5",
+        "group": "869143ee49ab3915",
+        "name": "Reset",
+        "label": "Reset",
+        "order": 2,
+        "width": "3",
+        "height": "1",
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "red",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 210,
+        "y": 680,
+        "wires": [
+            [
+                "46cce37d3d74ba6c"
+            ]
+        ]
+    },
+    {
+        "id": "52e5a736bc257fb5",
+        "type": "http request",
+        "z": "e46298c3f3407f28",
+        "g": "704b9f4aabfab6a5",
+        "name": "Firmare update",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://192.168.0.216/firmware-upgrade",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 460,
+        "y": 720,
+        "wires": [
+            [
+                "0daa64f04b2aad4d"
+            ]
+        ]
+    },
+    {
+        "id": "dfbf737e1badbf3b",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "@flowfuse/node-red-dashboard": "1.26.0"
+        }
+    }
+]

@@ -1,0 +1,149 @@
+/* CSS File for HouseTrap TV */
+
+@font-face {
+    font-family: DinOT;
+    src: url("../font/DINOT-Bold.otf") format("opentype");
+}
+
+body {
+    background: black;
+    margin: 0;
+    cursor: none;
+}
+
+.content {
+    position: absolute;
+    display: flex;
+    width: 1024px;
+    height: 384px;
+    font-family: DinOT, Arial, Helvetica, sans-serif;
+}
+
+.video-container {
+    position: absolute;
+    left: 256px;
+    right: 0;
+    width: 768px;
+    height: 384px;
+}
+
+.game-container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 256px;
+    height: 384px;
+    color: white;
+}
+
+.game-inside {
+    position: absolute;
+    width: 256px;
+    height: 384px;
+    top: 0;
+    left: 0;
+}
+
+#video {
+    z-index: 2;
+}
+
+#game {
+    z-index: 1;
+}
+
+#bg-image-container {
+    z-index: 2;
+    opacity: 1;
+}
+
+#vs-container {
+    z-index: 3;
+    width: 100%;
+    color: #aca39a;
+    margin-top: 10px;
+    font-size: 18pt;
+    font-weight: bold;
+    text-align: center;
+    height: auto;
+}
+
+#teams-container {
+    display: flex;
+    z-index: 3;
+    width: 100%;
+    margin-top: 10px;
+    padding-left: 2px;
+    padding-right: 2px;
+    font-size: 18pt;
+    font-weight: bold;
+    text-align: center;
+    height: auto;
+}
+
+#team {
+    width: 50%;
+    color: #007cb7;
+    text-align: center;
+}
+
+#levels-container {
+    display: flex;
+    z-index: 4;
+    width: 100%;
+    margin-top: 260px;
+    font-size: 24pt;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    height: auto;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+#level {
+    width: 100%;
+    text-align: center;
+}
+
+#timer-container {
+    z-index: 5;
+}
+
+#animation-container {
+    z-index: 10;
+}
+
+#score-container {
+    z-index: 11;
+}
+
+#timer {
+    font-size: 22pt;
+    font-weight: bold;
+    margin-top: 340px;
+    text-align: center;
+}
+
+#score {
+    font-size: 22pt;
+    font-weight: bold;
+    margin-top: 320px;
+    text-align: center;
+    display: none;
+}
+
+#gauges-container {
+    z-index: 1;
+    display: flex;
+    height: 239px;
+    margin-top: 78px;
+    width: 100%;
+}
+
+#gauge {
+    height: 0%;
+    margin-top: auto;
+    width: 100%;
+    background-color: #007cb7;
+}

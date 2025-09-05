@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine a Sirops</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/site.css">
+
+</head>
+
+<body>
+    <div class="content">
+        <div class="game-container">
+            <div id="gauges-container" class="game-inside">
+                <div id="gauge">
+                </div>
+            </div>
+
+            <div id="bg-image-container" class="game-inside">
+                <img id="bg-image" src="img/pile-1.png" />
+            </div>
+
+            <div id="vs-container" class="game-inside">
+
+            </div>
+
+
+            <div id="levels-container" class="game-inside">
+                <div id="level"></div>
+            </div>
+
+            <div id="timer-container" class="game-inside">
+                <div id="timer">
+                    <span id="timer-value">--</span>
+                </div>
+            </div>
+
+            <div id="animation-container" class="game-inside">
+                <video id="animation" muted>
+                    <source src="" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div id="score-container" class="game-inside">
+                <div id="score">
+                    <span id="score-value">--</span>
+                </div>
+            </div>
+        </div>
+        <div class="video-container">
+            <video id="video" autoplay muted loop>
+                <source src="/movie/HEIA-FR-Panels-768x384-FR-DE.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+    <script src="/js/jquery-3.7.1.min.js"></script>
+    <script src="/js/luxon.min.js"></script>
+    <script src="/js/mqtt.min.js"></script>
+    <script src="/js/site.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            init_client()
+            reset_chrono()
+            set_gauge(42);
+
+        });
+    </script>
+</body>
+
+</html>

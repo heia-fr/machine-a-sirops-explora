@@ -1,0 +1,32 @@
+services:
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "8000:80"
+    volumes:
+      - ./nginx/templates:/etc/nginx/templates
+      - ../html:/usr/share/nginx/html
+    environment:
+      - TZ=Europe/Zurich
+
+  mosquitto:
+    image: eclipse-mosquitto
+    ports:
+      - "1883:1883/tcp"
+      - "8090:8090"
+    volumes:
+      - ./mosquitto/config:/mosquitto/config
+    environment:
+      - TZ=Europe/Zurich
+
+  node-red:
+    build:
+      context: ./node-red
+    ports:
+      - "1880:1880"
+    environment:
+      - TZ=Europe/Zurich
+    links:
+      - "mosquitto:mqtt-broker"
+      - "mosquitto:mqtt"
+      - "mosquitto:broker"

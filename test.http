@@ -1,0 +1,73 @@
+MQTT tcp://localhost:1883
+Topic: heiafr/ms/top/gauge/left
+
+{
+    "value": 90
+}
+###
+MQTT tcp://localhost:1883
+Topic: heiafr/ms/top/gauge
+
+{
+    "value": 10
+}
+###
+MQTT tcp://localhost:1883
+Topic: heiafr/ms/top/gauge/right
+
+{
+    "value": 70
+}
+###
+MQTT tcp://localhost:1883
+Topic: heiafr/ms/top/chrono/start
+
+1
+###
+MQTT tcp://localhost:1883
+Topic: heiafr/ms/top/chrono/stop
+
+1
+###
+MQTT tcp://localhost:1883
+Topic: heiafr/ms/top/chrono/reset
+
+1
+###
+MQTT tcp://localhost:1883
+Topic: heiafr/ms/top/video/play
+
+{
+    "id": "animation",
+    "src": "movie/Panel-256x384-COMPTEUR-START.mp4",
+    "duration": 6,
+    "fade-out": 1,
+    "fade-in": 0
+}
+###
+MQTT tcp://localhost:1883
+Topic: heiafr/ms/top/video/play
+
+{
+    "id": "animation",
+    "src": "movie/Panel-256x384-WINNER-RED.mp4",
+    "fade-in": 1
+}
+###
+MQTT tcp://localhost:1883
+Topic: heiafr/ms/top/video/stop
+
+{
+    "id": "animation",
+    "fade-out": 2
+}
+###
+MQTT tcp://localhost:1883
+Topic: heiafr/ms/top/score/show
+
+1
+###
+MQTT tcp://localhost:1883
+Topic: heiafr/ms/top/score/hide
+
+1

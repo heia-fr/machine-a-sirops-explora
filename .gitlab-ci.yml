@@ -1,0 +1,30 @@
+image: docker:27.0
+
+services:
+  - docker:27.0-dind
+
+variables:
+  IMAGE_TAG_SLUG: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
+  IMAGE_TAG_LATEST: $CI_REGISTRY_IMAGE:latest
+  DOCKER_CLI_EXPERIMENTAL: enabled
+
+before_script:
+  - docker info
+  - docker login -u $DOCKERHUB_USER -p $DOCKERHUB_TOKEN
+  - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+
+build:
+  stage: build
+  script:
+    - docker context create default-context
+    - docker context ls
+    - docker buildx create --name mutliarch-builder --use default-context
+    - docker buildx ls
+    - docker buildx inspect mutliarch-builder --bootstrap
+    - >
+      docker buildx build -f docker/Dockerfile
+      --platform linux/amd64,linux/arm64,linux/arm/v7
+      --tag $IMAGE_TAG_SLUG
+      --tag $IMAGE_TAG_LATEST
+      --provenance false
+      --push .
