@@ -28,6 +28,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
+          images: ghcr.io/${{ env.IMAGE_NAME }}
           tags: |
             type=schedule,priority=1000,pattern=nightly
             type=semver,priority=900,pattern={{version}}
@@ -41,7 +42,6 @@ jobs:
         if: startsWith(github.event.ref, 'refs/tags/v')
         uses: docker/build-push-action@v6
         with:
-          file: Dockerfile
           platforms: linux/amd64,linux/arm64
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
