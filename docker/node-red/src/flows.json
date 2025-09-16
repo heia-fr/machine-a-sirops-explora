@@ -24,6 +24,14 @@
         "env": []
     },
     {
+        "id": "cc2e41e0eed1ac85",
+        "type": "tab",
+        "label": "Display Power/Energy",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "fedabdae39268dc7",
         "type": "tab",
         "label": "Raspberry",
@@ -194,8 +202,8 @@
         ],
         "order": 1,
         "className": "",
-        "visible": "true",
-        "disabled": "false"
+        "visible": true,
+        "disabled": false
     },
     {
         "id": "cd297db1aa9255a7",
@@ -385,6 +393,56 @@
         "groupType": "default"
     },
     {
+        "id": "561fc2b10511c3e2",
+        "type": "ui-page",
+        "name": "Power/Energy",
+        "ui": "9c9a26b23301d87a",
+        "path": "/page3",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "17420155d1619ebb",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "6"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "6"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "6"
+            }
+        ],
+        "order": -1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "8042fa2145592bab",
+        "type": "ui-group",
+        "name": "Valeurs en temps réel",
+        "page": "561fc2b10511c3e2",
+        "width": "15",
+        "height": "6",
+        "order": -1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
         "id": "6d9c84a7346536ad",
         "type": "ui-template",
         "z": "df94bd946997adf7",
@@ -439,8 +497,8 @@
         "enablePointerup": false,
         "pointerupPayload": "",
         "pointerupPayloadType": "str",
-        "x": 340,
-        "y": 340,
+        "x": 320,
+        "y": 360,
         "wires": [
             [
                 "1852940ce5304bef",
@@ -449,7 +507,11 @@
                 "b86941baeed0b2b0",
                 "b1458cf22522aa0b",
                 "bb66bd4c98114e3b",
-                "1322fb2fca9f603d"
+                "1322fb2fca9f603d",
+                "bd17ad14a01b2bad",
+                "9a441aef55024b5c",
+                "a1225ab53c590332",
+                "0cb6429d3e9a89d3"
             ]
         ]
     },
@@ -498,7 +560,7 @@
         "to": "",
         "reg": false,
         "x": 690,
-        "y": 280,
+        "y": 240,
         "wires": [
             [
                 "df8a527c4243b8f9"
@@ -522,12 +584,16 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 500,
-        "y": 600,
+        "x": 420,
+        "y": 720,
         "wires": [
             [
                 "32927b15a7c7316f",
-                "ee5913f4d1abc08b"
+                "ee5913f4d1abc08b",
+                "c9ad76591a970f7a",
+                "90b9f7dc1b32857f",
+                "15550784c6cf5d20",
+                "1f8c1bbbf0c65fc0"
             ]
         ]
     },
@@ -558,7 +624,7 @@
         "to": "",
         "reg": false,
         "x": 690,
-        "y": 580,
+        "y": 700,
         "wires": [
             [
                 "df8a527c4243b8f9"
@@ -592,7 +658,7 @@
         "to": "",
         "reg": false,
         "x": 690,
-        "y": 220,
+        "y": 180,
         "wires": [
             [
                 "df8a527c4243b8f9"
@@ -626,7 +692,7 @@
         "to": "",
         "reg": false,
         "x": 690,
-        "y": 360,
+        "y": 300,
         "wires": [
             [
                 "df8a527c4243b8f9"
@@ -660,7 +726,7 @@
         "to": "",
         "reg": false,
         "x": 700,
-        "y": 480,
+        "y": 440,
         "wires": [
             [
                 "df8a527c4243b8f9"
@@ -694,7 +760,7 @@
         "to": "",
         "reg": false,
         "x": 690,
-        "y": 660,
+        "y": 740,
         "wires": [
             [
                 "df8a527c4243b8f9"
@@ -732,8 +798,8 @@
         "enablePointerup": false,
         "pointerupPayload": "",
         "pointerupPayloadType": "str",
-        "x": 330,
-        "y": 1060,
+        "x": 310,
+        "y": 1240,
         "wires": [
             [
                 "82146e92b29b59d0",
@@ -741,7 +807,14 @@
                 "de6aea58040d8a2b",
                 "1bd1cb893f9e866d",
                 "4cdb38037a2bcd82",
-                "ecc2bfcc9d095bde"
+                "ecc2bfcc9d095bde",
+                "485a7208dd4c657f",
+                "21ae2be9fb7270f6",
+                "59fa16704d2b6663",
+                "ca716d66f0b472b9",
+                "8b63082f8995c946",
+                "f56fc175447ec6d3",
+                "97a625944e895448"
             ]
         ]
     },
@@ -759,8 +832,8 @@
         "correl": "",
         "expiry": "",
         "broker": "681dc25e6534cff6",
-        "x": 1010,
-        "y": 1060,
+        "x": 1070,
+        "y": 1100,
         "wires": []
     },
     {
@@ -790,7 +863,7 @@
         "to": "",
         "reg": false,
         "x": 690,
-        "y": 1000,
+        "y": 1100,
         "wires": [
             [
                 "264d8d59c65e843a"
@@ -823,8 +896,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 700,
-        "y": 940,
+        "x": 690,
+        "y": 1060,
         "wires": [
             [
                 "264d8d59c65e843a"
@@ -858,7 +931,7 @@
         "to": "",
         "reg": false,
         "x": 690,
-        "y": 1100,
+        "y": 1140,
         "wires": [
             [
                 "264d8d59c65e843a"
@@ -921,7 +994,7 @@
         "payload": "1",
         "payloadType": "num",
         "x": 330,
-        "y": 940,
+        "y": 1040,
         "wires": [
             [
                 "32cf3652b6a7bc17"
@@ -970,11 +1043,12 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 370,
-        "y": 1340,
+        "x": 190,
+        "y": 1820,
         "wires": [
             [
-                "6d3a224af1693745"
+                "6d3a224af1693745",
+                "be2561342fa98486"
             ]
         ]
     },
@@ -983,15 +1057,15 @@
         "type": "function",
         "z": "1b31f175e8f2bfb7",
         "name": "function 5",
-        "func": "var distance = Number(msg.payload) * 0.7 * Math.PI\nvar percent = Math.round(distance * 100 / 300)\n\nvar msg2 = null\n\nif (percent >= 100) {\n    percent = 100\n    if (flow.get(\"running\")) {\n        flow.set(\"running\", false)\n        msg2 = {\n            \"winner\": 1\n        }\n    }\n}\n\nvar msg1 = {\n    \"topic\": \"heiafr/ms/top/gauge\",\n    \"payload\": JSON.stringify(\n        {\n            \"value\" : percent\n        }\n    )\n}\n\n\nreturn [msg1, msg2]",
+        "func": "var distance = Number(msg.payload) * 0.7 * Math.PI\nvar percent = Math.round(distance * 100 / flow.get('distance'))\n\nvar msg2 = null\n\nif (percent >= 100) {\n    percent = 100\n    if (flow.get(\"running\")) {\n        flow.set(\"running\", false)\n        msg2 = {\n            \"winner\": 1\n        }\n    }\n}\n\nvar msg1 = {\n    \"topic\": \"heiafr/ms/top/gauge\",\n    \"payload\": JSON.stringify(\n        {\n            \"value\" : percent\n        }\n    )\n}\n\n\nreturn [msg1, msg2]",
         "outputs": 2,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 660,
-        "y": 1340,
+        "x": 480,
+        "y": 1820,
         "wires": [
             [
                 "252d787468234489",
@@ -1000,7 +1074,8 @@
             [
                 "5c1bd8e936886d71",
                 "db438a12915533c3",
-                "96bfc770016305c0"
+                "96bfc770016305c0",
+                "8992fa78dbc841d0"
             ]
         ]
     },
@@ -1018,8 +1093,8 @@
         "correl": "",
         "expiry": "",
         "broker": "681dc25e6534cff6",
-        "x": 1490,
-        "y": 1340,
+        "x": 1310,
+        "y": 1800,
         "wires": []
     },
     {
@@ -1029,10 +1104,11 @@
         "name": "Bike Distance",
         "mode": "link",
         "links": [
+            "b97a99de0c90024c",
             "e85492afd3b4e89b"
         ],
-        "x": 865,
-        "y": 1280,
+        "x": 685,
+        "y": 1740,
         "wires": []
     },
     {
@@ -1061,8 +1137,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 960,
-        "y": 1600,
+        "x": 780,
+        "y": 1920,
         "wires": [
             [
                 "252d787468234489"
@@ -1086,8 +1162,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 940,
-        "y": 1680,
+        "x": 760,
+        "y": 1980,
         "wires": [
             [
                 "93593d9eb3af6931"
@@ -1120,8 +1196,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1170,
-        "y": 1680,
+        "x": 950,
+        "y": 1980,
         "wires": [
             [
                 "252d787468234489"
@@ -1154,8 +1230,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 950,
-        "y": 1520,
+        "x": 770,
+        "y": 1880,
         "wires": [
             [
                 "252d787468234489"
@@ -1189,7 +1265,7 @@
         "to": "",
         "reg": false,
         "x": 690,
-        "y": 840,
+        "y": 1020,
         "wires": [
             [
                 "264d8d59c65e843a"
@@ -1249,8 +1325,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 680,
-        "y": 420,
+        "x": 700,
+        "y": 360,
         "wires": [
             []
         ]
@@ -1274,11 +1350,961 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 720,
-        "y": 1240,
+        "x": 700,
+        "y": 1220,
         "wires": [
             []
         ]
+    },
+    {
+        "id": "951f6cf73c499ab1",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "time2",
+                "pt": "flow",
+                "to": "object",
+                "tot": "date"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 840,
+        "y": 2300,
+        "wires": [
+            [
+                "05e45cade467793c"
+            ]
+        ]
+    },
+    {
+        "id": "05e45cade467793c",
+        "type": "function",
+        "z": "1b31f175e8f2bfb7",
+        "name": "Time Comp.",
+        "func": "flow.set('time_elapsed',flow.get('time2')-flow.get('time1'))\nflow.set('time1',flow.get('time2'))\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1030,
+        "y": 2300,
+        "wires": [
+            [
+                "2efca6f9a730221a"
+            ]
+        ]
+    },
+    {
+        "id": "2efca6f9a730221a",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "time_elapsed",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1200,
+        "y": 2300,
+        "wires": [
+            [
+                "7386cb995304a190"
+            ]
+        ]
+    },
+    {
+        "id": "c9ad76591a970f7a",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "time1",
+                "pt": "flow",
+                "to": "object",
+                "tot": "date"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 700,
+        "y": 780,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f86c280bf780380c",
+        "type": "ui-slider",
+        "z": "1b31f175e8f2bfb7",
+        "group": "8ad66754c75a467f",
+        "name": "",
+        "label": "Niv. de Résistance",
+        "tooltip": "",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "topic",
+        "topicType": "msg",
+        "thumbLabel": "always",
+        "showTicks": "always",
+        "min": 0,
+        "max": "8",
+        "step": 1,
+        "className": "",
+        "iconPrepend": "",
+        "iconAppend": "",
+        "color": "",
+        "colorTrack": "",
+        "colorThumb": "",
+        "showTextField": false,
+        "x": 590,
+        "y": 2540,
+        "wires": [
+            [
+                "4e3d0c51f880c462"
+            ]
+        ]
+    },
+    {
+        "id": "4e3d0c51f880c462",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "resistance",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 790,
+        "y": 2540,
+        "wires": [
+            [
+                "6c416a8734b96050"
+            ]
+        ]
+    },
+    {
+        "id": "1e09ba3c5f021dd1",
+        "type": "ui-slider",
+        "z": "1b31f175e8f2bfb7",
+        "group": "8ad66754c75a467f",
+        "name": "",
+        "label": "Distance (m)",
+        "tooltip": "",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "outs": "all",
+        "topic": "topic",
+        "topicType": "msg",
+        "thumbLabel": "always",
+        "showTicks": "always",
+        "min": "100",
+        "max": "400",
+        "step": "50",
+        "className": "",
+        "iconPrepend": "",
+        "iconAppend": "",
+        "color": "",
+        "colorTrack": "",
+        "colorThumb": "",
+        "showTextField": false,
+        "x": 570,
+        "y": 2600,
+        "wires": [
+            [
+                "e5295d7f5271d6fc"
+            ]
+        ]
+    },
+    {
+        "id": "e5295d7f5271d6fc",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "distance",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 800,
+        "y": 2600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7386cb995304a190",
+        "type": "function",
+        "z": "1b31f175e8f2bfb7",
+        "name": "Power Comp.",
+        "func": " // time in miliseconds since last turn, valid for a 27 inches wheel\nvar time=Number(msg.payload)\nvar speed = 7756 / time\nvar power = 0\nvar coeff=flow.get('coeffs')\nfor (var i = 1; i < 4; i++) {\n    power += coeff[i - 1] * speed ** i\n}\nvar energy = power * time / 1000.\n\nif (energy<0) {\n    energy=0;\n}\nif (power<0) {\n    power=0;\n}\n// speed in km/h, power in Watts, energy in Joules\nmsg.payload=[energy,speed,power]\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1380,
+        "y": 2300,
+        "wires": [
+            [
+                "650686bb63814a15",
+                "24443646416fcb5b",
+                "108491c632ac8a1d"
+            ]
+        ]
+    },
+    {
+        "id": "6c416a8734b96050",
+        "type": "function",
+        "z": "1b31f175e8f2bfb7",
+        "name": "function 1",
+        "func": "var resistance=flow.get('resistance')\nvar coeff=[0.e0,0.e0,0.e0]\nswitch(resistance){\n    case 1: \n        coeff=[1.20349905e+00 , 8.72304167e-02 , -4.46806476e-04] ; break;\n    case 2: \n        coeff=[2.79474586e+00 , 7.37072647e-02 , -3.17372618e-04] ; break;\n    case 3: \n        coeff=[2.53672637e+00 , 1.43674111e-01 , -1.11973465e-03] ; break;\n    case 4: \n        coeff=[4.30909715e+00 , 1.59127553e-01 , -1.35327319e-03] ; break;\n    case 5: \n        coeff=[5.02790546e+00 , 2.04860351e-01 , -1.80960319e-03] ; break;\n    case 6: \n        coeff=[6.01226278e+00 , 2.48213368e-01 , -2.17856458e-03] ; break;\t     \n    case 7: \n        coeff=[6.98194814e+00 , 3.04389178e-01 , -2.68943381e-03] ; break;   \n    case 8: \n        coeff=[8.86984423e+00 , 3.20018222e-01 , -2.89993804e-03] ; break; \n}\nflow.set('coeffs',coeff)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1000,
+        "y": 2540,
+        "wires": [
+            [
+                "fe83c44be59afebb"
+            ]
+        ]
+    },
+    {
+        "id": "fe83c44be59afebb",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "coeffs",
+                "tot": "flow"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1180,
+        "y": 2540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "89250fcec9768a36",
+        "type": "inject",
+        "z": "1b31f175e8f2bfb7",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "3",
+        "payloadType": "num",
+        "x": 390,
+        "y": 2540,
+        "wires": [
+            [
+                "f86c280bf780380c"
+            ]
+        ]
+    },
+    {
+        "id": "49f7a80d0b5f3db3",
+        "type": "inject",
+        "z": "1b31f175e8f2bfb7",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "200",
+        "payloadType": "num",
+        "x": 390,
+        "y": 2600,
+        "wires": [
+            [
+                "1e09ba3c5f021dd1"
+            ]
+        ]
+    },
+    {
+        "id": "650686bb63814a15",
+        "type": "function",
+        "z": "1b31f175e8f2bfb7",
+        "name": "Extract energy",
+        "func": "\nvar en_cal=global.get('energy')+msg.payload[0]/4.18\nmsg.payload=Math.round(en_cal)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1700,
+        "y": 2320,
+        "wires": [
+            [
+                "398d8c1e197b3e9c"
+            ]
+        ]
+    },
+    {
+        "id": "24443646416fcb5b",
+        "type": "function",
+        "z": "1b31f175e8f2bfb7",
+        "name": "Extract power",
+        "func": "msg.payload=Math.round(msg.payload[2]);\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1700,
+        "y": 2280,
+        "wires": [
+            [
+                "69f8c708937acbc8"
+            ]
+        ]
+    },
+    {
+        "id": "108491c632ac8a1d",
+        "type": "function",
+        "z": "1b31f175e8f2bfb7",
+        "name": "Extract speed",
+        "func": "msg.payload=Math.round(msg.payload[1])\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1700,
+        "y": 2360,
+        "wires": [
+            [
+                "5e6bbe8e42f064f4"
+            ]
+        ]
+    },
+    {
+        "id": "c66fa3431d0cdbf6",
+        "type": "comment",
+        "z": "1b31f175e8f2bfb7",
+        "name": "Block to extract power speed and energy at each new rotation",
+        "info": "",
+        "x": 560,
+        "y": 2240,
+        "wires": []
+    },
+    {
+        "id": "0cb6429d3e9a89d3",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "energy",
+                "pt": "global",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 710,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "90b9f7dc1b32857f",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "time2",
+                "pt": "flow",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 700,
+        "y": 820,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ea7db201de53df91",
+        "type": "switch",
+        "z": "1b31f175e8f2bfb7",
+        "name": "",
+        "property": "compute_pow",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 690,
+        "y": 2300,
+        "wires": [
+            [
+                "951f6cf73c499ab1"
+            ]
+        ]
+    },
+    {
+        "id": "9a441aef55024b5c",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "speed",
+                "pt": "global",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 700,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a1225ab53c590332",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "power",
+                "pt": "global",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 700,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "15550784c6cf5d20",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "compute_pow",
+                "pt": "flow",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 720,
+        "y": 860,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bd17ad14a01b2bad",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "compute_pow",
+                "pt": "flow",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 700,
+        "y": 500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "485a7208dd4c657f",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "time1",
+                "pt": "flow",
+                "to": "",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 700,
+        "y": 1260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "59fa16704d2b6663",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "energy",
+                "pt": "global",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 710,
+        "y": 1340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "21ae2be9fb7270f6",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "time2",
+                "pt": "flow",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 700,
+        "y": 1300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ca716d66f0b472b9",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "speed",
+                "pt": "global",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 700,
+        "y": 1380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8b63082f8995c946",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "power",
+                "pt": "global",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 700,
+        "y": 1420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f56fc175447ec6d3",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "compute_pow",
+                "pt": "flow",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 720,
+        "y": 1460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "398d8c1e197b3e9c",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "energy",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1910,
+        "y": 2320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5e6bbe8e42f064f4",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "speed",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1900,
+        "y": 2360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "69f8c708937acbc8",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "power",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1900,
+        "y": 2280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8992fa78dbc841d0",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "compute_pow",
+                "pt": "flow",
+                "to": "false",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 800,
+        "y": 2040,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "be2561342fa98486",
+        "type": "switch",
+        "z": "1b31f175e8f2bfb7",
+        "name": "",
+        "property": "turns",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "lt",
+                "v": "payload",
+                "vt": "msg"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 450,
+        "y": 2300,
+        "wires": [
+            [
+                "ea7db201de53df91",
+                "f09e3523ed30f99b",
+                "31e9f52407ddcfc5"
+            ]
+        ]
+    },
+    {
+        "id": "1f8c1bbbf0c65fc0",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "turns",
+                "pt": "flow",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 690,
+        "y": 900,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "97a625944e895448",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "turns",
+                "pt": "flow",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 690,
+        "y": 1500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f09e3523ed30f99b",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "turns",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg",
+                "dc": true
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 710,
+        "y": 2360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "31e9f52407ddcfc5",
+        "type": "debug",
+        "z": "1b31f175e8f2bfb7",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 700,
+        "y": 2420,
+        "wires": []
     },
     {
         "id": "ad4208024022ceec",
@@ -1520,6 +2546,374 @@
         "wires": [
             [
                 "3b75792c540c5ade"
+            ]
+        ]
+    },
+    {
+        "id": "fe38497f1cc14095",
+        "type": "ui-gauge",
+        "z": "cc2e41e0eed1ac85",
+        "name": "",
+        "group": "8042fa2145592bab",
+        "order": 0,
+        "width": "3",
+        "height": "5",
+        "gtype": "gauge-battery",
+        "gstyle": "needle",
+        "title": "Avancée",
+        "units": "%",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#ea5353"
+            },
+            {
+                "from": "50",
+                "color": "#ffc800"
+            },
+            {
+                "from": "100",
+                "color": "#5cd65c"
+            }
+        ],
+        "min": 0,
+        "max": "100",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 1240,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "b97a99de0c90024c",
+        "type": "link in",
+        "z": "cc2e41e0eed1ac85",
+        "name": "link in 1",
+        "links": [
+            "70162b2e7468411f"
+        ],
+        "x": 855,
+        "y": 160,
+        "wires": [
+            [
+                "1036dbdec08d61b5"
+            ]
+        ]
+    },
+    {
+        "id": "1036dbdec08d61b5",
+        "type": "function",
+        "z": "cc2e41e0eed1ac85",
+        "name": "function 2",
+        "func": "msg.payload = JSON.parse(msg.payload)[\"value\"]\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1040,
+        "y": 160,
+        "wires": [
+            [
+                "fe38497f1cc14095"
+            ]
+        ]
+    },
+    {
+        "id": "018df52a6188bcdd",
+        "type": "ui-gauge",
+        "z": "cc2e41e0eed1ac85",
+        "name": "",
+        "group": "8042fa2145592bab",
+        "order": 0,
+        "width": 3,
+        "height": "5",
+        "gtype": "gauge-34",
+        "gstyle": "needle",
+        "title": "Energie",
+        "units": "Cal",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#26a269"
+            },
+            {
+                "from": "5000",
+                "color": "#26a269"
+            }
+        ],
+        "min": 0,
+        "max": "5000",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 1240,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "7c3f4fbe361df1d2",
+        "type": "ui-gauge",
+        "z": "cc2e41e0eed1ac85",
+        "name": "",
+        "group": "8042fa2145592bab",
+        "order": 0,
+        "width": 3,
+        "height": "5",
+        "gtype": "gauge-34",
+        "gstyle": "needle",
+        "title": "Puissance",
+        "units": "W",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5cd65c"
+            },
+            {
+                "from": "300",
+                "color": "#ffc800"
+            },
+            {
+                "from": "700",
+                "color": "#ea5353"
+            }
+        ],
+        "min": 0,
+        "max": "1000",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 1250,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "1a2e99f27d85deb5",
+        "type": "ui-gauge",
+        "z": "cc2e41e0eed1ac85",
+        "name": "",
+        "group": "8042fa2145592bab",
+        "order": 0,
+        "width": "3",
+        "height": "5",
+        "gtype": "gauge-34",
+        "gstyle": "needle",
+        "title": "Vitesse",
+        "units": "km/h",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5cd65c"
+            },
+            {
+                "from": "25",
+                "color": "#ffc800"
+            },
+            {
+                "from": "40",
+                "color": "#ea5353"
+            }
+        ],
+        "min": 0,
+        "max": "60",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 1240,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "36be0a09cdf22ad8",
+        "type": "inject",
+        "z": "cc2e41e0eed1ac85",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "0.2",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "0",
+        "payloadType": "num",
+        "x": 890,
+        "y": 200,
+        "wires": [
+            [
+                "477f33796579923d"
+            ]
+        ]
+    },
+    {
+        "id": "a7f8013734f1647a",
+        "type": "inject",
+        "z": "cc2e41e0eed1ac85",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "0.2",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "0",
+        "payloadType": "num",
+        "x": 890,
+        "y": 240,
+        "wires": [
+            [
+                "ab8ad046fa5bf475"
+            ]
+        ]
+    },
+    {
+        "id": "254695f320c94ef4",
+        "type": "inject",
+        "z": "cc2e41e0eed1ac85",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "0.2",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "0",
+        "payloadType": "num",
+        "x": 890,
+        "y": 280,
+        "wires": [
+            [
+                "72eef9085b30e10f"
+            ]
+        ]
+    },
+    {
+        "id": "477f33796579923d",
+        "type": "change",
+        "z": "cc2e41e0eed1ac85",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "speed",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1060,
+        "y": 200,
+        "wires": [
+            [
+                "1a2e99f27d85deb5"
+            ]
+        ]
+    },
+    {
+        "id": "ab8ad046fa5bf475",
+        "type": "change",
+        "z": "cc2e41e0eed1ac85",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "power",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1060,
+        "y": 240,
+        "wires": [
+            [
+                "7c3f4fbe361df1d2"
+            ]
+        ]
+    },
+    {
+        "id": "72eef9085b30e10f",
+        "type": "change",
+        "z": "cc2e41e0eed1ac85",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "energy",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1060,
+        "y": 280,
+        "wires": [
+            [
+                "018df52a6188bcdd"
             ]
         ]
     },
@@ -3007,7 +4401,7 @@
         "showTicks": "always",
         "min": 0,
         "max": "200",
-        "step": "5",
+        "step": "1",
         "className": "",
         "iconPrepend": "",
         "iconAppend": "",
