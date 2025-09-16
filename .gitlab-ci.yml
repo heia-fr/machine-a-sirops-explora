@@ -1,30 +1,46 @@
-image: docker:27.0
-
-services:
-  - docker:27.0-dind
+stages:
+  - build
 
 variables:
-  IMAGE_TAG_SLUG: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
-  IMAGE_TAG_LATEST: $CI_REGISTRY_IMAGE:latest
-  DOCKER_CLI_EXPERIMENTAL: enabled
+  STORAGE_DRIVER: vfs
+  BUILDAH_FORMAT: docker
+  IMAGE_TAG_REF: "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME"
+  IMAGE_TAG_LATEST: "$CI_REGISTRY_IMAGE:latest"
 
-before_script:
-  - docker info
-  - docker login -u $DOCKERHUB_USER -p $DOCKERHUB_TOKEN
-  - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+default:
+  image: quay.io/buildah/stable
+  before_script:
+    - echo "$CI_REGISTRY_PASSWORD" | buildah login -u "$CI_REGISTRY_USER" --password-stdin $CI_REGISTRY
 
-build:
+build-amd64:
   stage: build
   script:
-    - docker context create default-context
-    - docker context ls
-    - docker buildx create --name mutliarch-builder --use default-context
-    - docker buildx ls
-    - docker buildx inspect mutliarch-builder --bootstrap
-    - >
-      docker buildx build -f docker/Dockerfile
-      --platform linux/amd64,linux/arm64,linux/arm/v7
-      --tag $IMAGE_TAG_SLUG
-      --tag $IMAGE_TAG_LATEST
-      --provenance false
-      --push .
+    - buildah build --platform=linux/amd64
+      -t ${IMAGE_TAG_REF}-amd64
+      -t ${IMAGE_TAG_LATEST}-amd64
+      -f docker/Dockerfile .
+    - buildah push ${IMAGE_TAG_REF}-amd64
+    - buildah push ${IMAGE_TAG_LATEST}-amd64
+
+build-arm64:
+  stage: build
+  script:
+    - buildah build --platform=linux/arm64/v8
+      -t ${IMAGE_TAG_REF}-arm64
+      -t ${IMAGE_TAG_LATEST}-arm64
+      -f docker/Dockerfile .
+    - buildah push ${IMAGE_TAG_REF}-arm64
+    - buildah push ${IMAGE_TAG_LATEST}-arm64
+
+create_manifest:
+  stage: build
+  needs: ["build-arm64", "build-amd64"]
+  script:
+    - buildah manifest create ${IMAGE_TAG_REF}
+    - buildah manifest add ${IMAGE_TAG_REF} docker://${IMAGE_TAG_REF}-amd64
+    - buildah manifest add ${IMAGE_TAG_REF} docker://${IMAGE_TAG_REF}-arm64
+    - buildah manifest push --all ${IMAGE_TAG_REF}
+    - buildah manifest create ${IMAGE_TAG_LATEST}
+    - buildah manifest add ${IMAGE_TAG_LATEST} docker://${IMAGE_TAG_LATEST}-amd64
+    - buildah manifest add ${IMAGE_TAG_LATEST} docker://${IMAGE_TAG_LATEST}-arm64
+    - buildah manifest push --all ${IMAGE_TAG_LATEST}
