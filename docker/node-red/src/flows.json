@@ -497,8 +497,8 @@
         "enablePointerup": false,
         "pointerupPayload": "",
         "pointerupPayloadType": "str",
-        "x": 320,
-        "y": 360,
+        "x": 300,
+        "y": 460,
         "wires": [
             [
                 "1852940ce5304bef",
@@ -511,7 +511,12 @@
                 "bd17ad14a01b2bad",
                 "9a441aef55024b5c",
                 "a1225ab53c590332",
-                "0cb6429d3e9a89d3"
+                "0cb6429d3e9a89d3",
+                "d3cde4e8bc7878f9",
+                "4f7e53f4ed4bb1a5",
+                "b6fe2ad0405fef4f",
+                "508815e579c49bf0",
+                "71dc21dd51b38a6c"
             ]
         ]
     },
@@ -529,8 +534,8 @@
         "correl": "",
         "expiry": "",
         "broker": "681dc25e6534cff6",
-        "x": 1010,
-        "y": 340,
+        "x": 990,
+        "y": 440,
         "wires": []
     },
     {
@@ -559,8 +564,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 690,
-        "y": 240,
+        "x": 670,
+        "y": 320,
         "wires": [
             [
                 "df8a527c4243b8f9"
@@ -584,8 +589,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 420,
-        "y": 720,
+        "x": 400,
+        "y": 820,
         "wires": [
             [
                 "32927b15a7c7316f",
@@ -593,7 +598,8 @@
                 "c9ad76591a970f7a",
                 "90b9f7dc1b32857f",
                 "15550784c6cf5d20",
-                "1f8c1bbbf0c65fc0"
+                "1f8c1bbbf0c65fc0",
+                "0b2251944a2d4aa7"
             ]
         ]
     },
@@ -623,8 +629,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 690,
-        "y": 700,
+        "x": 670,
+        "y": 760,
         "wires": [
             [
                 "df8a527c4243b8f9"
@@ -657,8 +663,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 690,
-        "y": 180,
+        "x": 670,
+        "y": 280,
         "wires": [
             [
                 "df8a527c4243b8f9"
@@ -691,8 +697,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 690,
-        "y": 300,
+        "x": 670,
+        "y": 400,
         "wires": [
             [
                 "df8a527c4243b8f9"
@@ -725,8 +731,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 700,
-        "y": 440,
+        "x": 680,
+        "y": 540,
         "wires": [
             [
                 "df8a527c4243b8f9"
@@ -759,8 +765,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 690,
-        "y": 740,
+        "x": 670,
+        "y": 840,
         "wires": [
             [
                 "df8a527c4243b8f9"
@@ -799,13 +805,12 @@
         "pointerupPayload": "",
         "pointerupPayloadType": "str",
         "x": 310,
-        "y": 1240,
+        "y": 1520,
         "wires": [
             [
                 "82146e92b29b59d0",
                 "f440965eca287080",
                 "de6aea58040d8a2b",
-                "1bd1cb893f9e866d",
                 "4cdb38037a2bcd82",
                 "ecc2bfcc9d095bde",
                 "485a7208dd4c657f",
@@ -814,7 +819,12 @@
                 "ca716d66f0b472b9",
                 "8b63082f8995c946",
                 "f56fc175447ec6d3",
-                "97a625944e895448"
+                "97a625944e895448",
+                "98d3f84e423157d7",
+                "75e6c0d512140f11",
+                "3bdf92313ac42f6d",
+                "b07711d543116dc1",
+                "93a12bedba0f37d5"
             ]
         ]
     },
@@ -833,7 +843,7 @@
         "expiry": "",
         "broker": "681dc25e6534cff6",
         "x": 1070,
-        "y": 1100,
+        "y": 1380,
         "wires": []
     },
     {
@@ -863,7 +873,7 @@
         "to": "",
         "reg": false,
         "x": 690,
-        "y": 1100,
+        "y": 1380,
         "wires": [
             [
                 "264d8d59c65e843a"
@@ -897,7 +907,7 @@
         "to": "",
         "reg": false,
         "x": 690,
-        "y": 1060,
+        "y": 1340,
         "wires": [
             [
                 "264d8d59c65e843a"
@@ -931,41 +941,7 @@
         "to": "",
         "reg": false,
         "x": 690,
-        "y": 1140,
-        "wires": [
-            [
-                "264d8d59c65e843a"
-            ]
-        ]
-    },
-    {
-        "id": "1bd1cb893f9e866d",
-        "type": "change",
-        "z": "1b31f175e8f2bfb7",
-        "name": "Stop animation",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "heiafr/ms/top/video/stop",
-                "tot": "str"
-            },
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "{\"id\":\"animation\",\"fade-out\":1}",
-                "tot": "json"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 700,
-        "y": 1180,
+        "y": 1480,
         "wires": [
             [
                 "264d8d59c65e843a"
@@ -994,7 +970,7 @@
         "payload": "1",
         "payloadType": "num",
         "x": 330,
-        "y": 1040,
+        "y": 1320,
         "wires": [
             [
                 "32cf3652b6a7bc17"
@@ -1022,8 +998,8 @@
         "topic": "",
         "payload": "1",
         "payloadType": "num",
-        "x": 350,
-        "y": 240,
+        "x": 330,
+        "y": 340,
         "wires": [
             [
                 "247b2d9061a865a6"
@@ -1044,7 +1020,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 190,
-        "y": 1820,
+        "y": 2200,
         "wires": [
             [
                 "6d3a224af1693745",
@@ -1065,7 +1041,7 @@
         "finalize": "",
         "libs": [],
         "x": 480,
-        "y": 1820,
+        "y": 2200,
         "wires": [
             [
                 "252d787468234489",
@@ -1074,8 +1050,8 @@
             [
                 "5c1bd8e936886d71",
                 "db438a12915533c3",
-                "96bfc770016305c0",
-                "8992fa78dbc841d0"
+                "8992fa78dbc841d0",
+                "e4f459b887ac8e50"
             ]
         ]
     },
@@ -1094,7 +1070,7 @@
         "expiry": "",
         "broker": "681dc25e6534cff6",
         "x": 1310,
-        "y": 1800,
+        "y": 2180,
         "wires": []
     },
     {
@@ -1107,8 +1083,8 @@
             "b97a99de0c90024c",
             "e85492afd3b4e89b"
         ],
-        "x": 685,
-        "y": 1740,
+        "x": 755,
+        "y": 2140,
         "wires": []
     },
     {
@@ -1138,11 +1114,9 @@
         "to": "",
         "reg": false,
         "x": 780,
-        "y": 1920,
+        "y": 2300,
         "wires": [
-            [
-                "252d787468234489"
-            ]
+            []
         ]
     },
     {
@@ -1163,7 +1137,7 @@
         "allowrate": false,
         "outputs": 1,
         "x": 760,
-        "y": 1980,
+        "y": 2360,
         "wires": [
             [
                 "93593d9eb3af6931"
@@ -1197,7 +1171,7 @@
         "to": "",
         "reg": false,
         "x": 950,
-        "y": 1980,
+        "y": 2360,
         "wires": [
             [
                 "252d787468234489"
@@ -1231,7 +1205,7 @@
         "to": "",
         "reg": false,
         "x": 770,
-        "y": 1880,
+        "y": 2260,
         "wires": [
             [
                 "252d787468234489"
@@ -1265,7 +1239,7 @@
         "to": "",
         "reg": false,
         "x": 690,
-        "y": 1020,
+        "y": 1300,
         "wires": [
             [
                 "264d8d59c65e843a"
@@ -1298,8 +1272,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 690,
-        "y": 120,
+        "x": 670,
+        "y": 240,
         "wires": [
             [
                 "df8a527c4243b8f9"
@@ -1325,8 +1299,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 700,
-        "y": 360,
+        "x": 680,
+        "y": 460,
         "wires": [
             []
         ]
@@ -1351,7 +1325,7 @@
         "to": "",
         "reg": false,
         "x": 700,
-        "y": 1220,
+        "y": 1700,
         "wires": [
             []
         ]
@@ -1376,7 +1350,7 @@
         "to": "",
         "reg": false,
         "x": 840,
-        "y": 2300,
+        "y": 2680,
         "wires": [
             [
                 "05e45cade467793c"
@@ -1396,7 +1370,7 @@
         "finalize": "",
         "libs": [],
         "x": 1030,
-        "y": 2300,
+        "y": 2680,
         "wires": [
             [
                 "2efca6f9a730221a"
@@ -1423,7 +1397,7 @@
         "to": "",
         "reg": false,
         "x": 1200,
-        "y": 2300,
+        "y": 2680,
         "wires": [
             [
                 "7386cb995304a190"
@@ -1449,8 +1423,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 700,
-        "y": 780,
+        "x": 680,
+        "y": 880,
         "wires": [
             []
         ]
@@ -1483,7 +1457,7 @@
         "colorThumb": "",
         "showTextField": false,
         "x": 590,
-        "y": 2540,
+        "y": 2900,
         "wires": [
             [
                 "4e3d0c51f880c462"
@@ -1510,7 +1484,7 @@
         "to": "",
         "reg": false,
         "x": 790,
-        "y": 2540,
+        "y": 2900,
         "wires": [
             [
                 "6c416a8734b96050"
@@ -1545,7 +1519,7 @@
         "colorThumb": "",
         "showTextField": false,
         "x": 570,
-        "y": 2600,
+        "y": 2960,
         "wires": [
             [
                 "e5295d7f5271d6fc"
@@ -1572,7 +1546,7 @@
         "to": "",
         "reg": false,
         "x": 800,
-        "y": 2600,
+        "y": 2960,
         "wires": [
             []
         ]
@@ -1590,7 +1564,7 @@
         "finalize": "",
         "libs": [],
         "x": 1380,
-        "y": 2300,
+        "y": 2680,
         "wires": [
             [
                 "650686bb63814a15",
@@ -1612,7 +1586,7 @@
         "finalize": "",
         "libs": [],
         "x": 1000,
-        "y": 2540,
+        "y": 2900,
         "wires": [
             [
                 "fe83c44be59afebb"
@@ -1639,7 +1613,7 @@
         "to": "",
         "reg": false,
         "x": 1180,
-        "y": 2540,
+        "y": 2900,
         "wires": [
             []
         ]
@@ -1662,7 +1636,7 @@
         "payload": "3",
         "payloadType": "num",
         "x": 390,
-        "y": 2540,
+        "y": 2900,
         "wires": [
             [
                 "f86c280bf780380c"
@@ -1687,7 +1661,7 @@
         "payload": "200",
         "payloadType": "num",
         "x": 390,
-        "y": 2600,
+        "y": 2960,
         "wires": [
             [
                 "1e09ba3c5f021dd1"
@@ -1699,7 +1673,7 @@
         "type": "function",
         "z": "1b31f175e8f2bfb7",
         "name": "Extract energy",
-        "func": "\nvar en_cal=global.get('energy')+msg.payload[0]/4.18\nmsg.payload=Math.round(en_cal)\nreturn msg;",
+        "func": "\nvar en_cal=global.get('energy')+msg.payload[0]/4.18\nmsg.payload=Math.round(en_cal)\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -1707,10 +1681,11 @@
         "finalize": "",
         "libs": [],
         "x": 1700,
-        "y": 2320,
+        "y": 2700,
         "wires": [
             [
-                "398d8c1e197b3e9c"
+                "398d8c1e197b3e9c",
+                "3361724d269c95ad"
             ]
         ]
     },
@@ -1719,7 +1694,7 @@
         "type": "function",
         "z": "1b31f175e8f2bfb7",
         "name": "Extract power",
-        "func": "msg.payload=Math.round(msg.payload[2]);\nreturn msg;\n",
+        "func": "msg.payload=Math.round(msg.payload[2]);\n\n\nreturn msg;\n",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -1727,10 +1702,11 @@
         "finalize": "",
         "libs": [],
         "x": 1700,
-        "y": 2280,
+        "y": 2660,
         "wires": [
             [
-                "69f8c708937acbc8"
+                "69f8c708937acbc8",
+                "7252db18c8ec0af4"
             ]
         ]
     },
@@ -1739,7 +1715,7 @@
         "type": "function",
         "z": "1b31f175e8f2bfb7",
         "name": "Extract speed",
-        "func": "msg.payload=Math.round(msg.payload[1])\nreturn msg;",
+        "func": "msg.payload=Math.round(msg.payload[1])\n\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -1747,10 +1723,11 @@
         "finalize": "",
         "libs": [],
         "x": 1700,
-        "y": 2360,
+        "y": 2740,
         "wires": [
             [
-                "5e6bbe8e42f064f4"
+                "5e6bbe8e42f064f4",
+                "bd271c130088aefe"
             ]
         ]
     },
@@ -1761,7 +1738,7 @@
         "name": "Block to extract power speed and energy at each new rotation",
         "info": "",
         "x": 560,
-        "y": 2240,
+        "y": 2620,
         "wires": []
     },
     {
@@ -1783,8 +1760,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 710,
-        "y": 620,
+        "x": 690,
+        "y": 720,
         "wires": [
             []
         ]
@@ -1808,8 +1785,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 700,
-        "y": 820,
+        "x": 680,
+        "y": 920,
         "wires": [
             []
         ]
@@ -1830,7 +1807,7 @@
         "repair": false,
         "outputs": 1,
         "x": 690,
-        "y": 2300,
+        "y": 2680,
         "wires": [
             [
                 "951f6cf73c499ab1"
@@ -1856,8 +1833,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 700,
-        "y": 540,
+        "x": 680,
+        "y": 640,
         "wires": [
             []
         ]
@@ -1881,8 +1858,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 700,
-        "y": 580,
+        "x": 680,
+        "y": 680,
         "wires": [
             []
         ]
@@ -1906,8 +1883,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 720,
-        "y": 860,
+        "x": 700,
+        "y": 960,
         "wires": [
             []
         ]
@@ -1931,8 +1908,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 700,
-        "y": 500,
+        "x": 680,
+        "y": 600,
         "wires": [
             []
         ]
@@ -1957,7 +1934,7 @@
         "to": "",
         "reg": false,
         "x": 700,
-        "y": 1260,
+        "y": 1740,
         "wires": [
             []
         ]
@@ -1982,7 +1959,7 @@
         "to": "",
         "reg": false,
         "x": 710,
-        "y": 1340,
+        "y": 1820,
         "wires": [
             []
         ]
@@ -2007,7 +1984,7 @@
         "to": "",
         "reg": false,
         "x": 700,
-        "y": 1300,
+        "y": 1780,
         "wires": [
             []
         ]
@@ -2032,7 +2009,7 @@
         "to": "",
         "reg": false,
         "x": 700,
-        "y": 1380,
+        "y": 1860,
         "wires": [
             []
         ]
@@ -2057,7 +2034,7 @@
         "to": "",
         "reg": false,
         "x": 700,
-        "y": 1420,
+        "y": 1900,
         "wires": [
             []
         ]
@@ -2082,7 +2059,7 @@
         "to": "",
         "reg": false,
         "x": 720,
-        "y": 1460,
+        "y": 1940,
         "wires": [
             []
         ]
@@ -2107,7 +2084,7 @@
         "to": "",
         "reg": false,
         "x": 1910,
-        "y": 2320,
+        "y": 2700,
         "wires": [
             []
         ]
@@ -2132,7 +2109,7 @@
         "to": "",
         "reg": false,
         "x": 1900,
-        "y": 2360,
+        "y": 2740,
         "wires": [
             []
         ]
@@ -2157,7 +2134,7 @@
         "to": "",
         "reg": false,
         "x": 1900,
-        "y": 2280,
+        "y": 2660,
         "wires": [
             []
         ]
@@ -2182,7 +2159,7 @@
         "to": "",
         "reg": false,
         "x": 800,
-        "y": 2040,
+        "y": 2420,
         "wires": [
             []
         ]
@@ -2205,7 +2182,7 @@
         "repair": false,
         "outputs": 1,
         "x": 450,
-        "y": 2300,
+        "y": 2680,
         "wires": [
             [
                 "ea7db201de53df91",
@@ -2233,8 +2210,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 690,
-        "y": 900,
+        "x": 670,
+        "y": 1000,
         "wires": [
             []
         ]
@@ -2259,7 +2236,7 @@
         "to": "",
         "reg": false,
         "x": 690,
-        "y": 1500,
+        "y": 1980,
         "wires": [
             []
         ]
@@ -2285,7 +2262,7 @@
         "to": "",
         "reg": false,
         "x": 710,
-        "y": 2360,
+        "y": 2740,
         "wires": [
             []
         ]
@@ -2303,8 +2280,536 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 700,
-        "y": 2420,
+        "y": 2800,
         "wires": []
+    },
+    {
+        "id": "7252db18c8ec0af4",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "Show Power",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "heiafr/ms/top/power",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1890,
+        "y": 2480,
+        "wires": [
+            [
+                "42a2c5e4f26a5fdc"
+            ]
+        ]
+    },
+    {
+        "id": "42a2c5e4f26a5fdc",
+        "type": "mqtt out",
+        "z": "1b31f175e8f2bfb7",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "681dc25e6534cff6",
+        "x": 2090,
+        "y": 2480,
+        "wires": []
+    },
+    {
+        "id": "3361724d269c95ad",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "Show Energy",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "heiafr/ms/top/energy",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1890,
+        "y": 2540,
+        "wires": [
+            [
+                "42a2c5e4f26a5fdc"
+            ]
+        ]
+    },
+    {
+        "id": "bd271c130088aefe",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "Show Speed",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "heiafr/ms/top/speed",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1890,
+        "y": 2600,
+        "wires": [
+            [
+                "42a2c5e4f26a5fdc"
+            ]
+        ]
+    },
+    {
+        "id": "d3cde4e8bc7878f9",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "Stop bike 2",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "heiafr/ms/bike/2/stop",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "1",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 670,
+        "y": 360,
+        "wires": [
+            [
+                "df8a527c4243b8f9"
+            ]
+        ]
+    },
+    {
+        "id": "98d3f84e423157d7",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "Stop bike 2",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "heiafr/ms/bike/2/stop",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "1",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 690,
+        "y": 1420,
+        "wires": [
+            [
+                "264d8d59c65e843a"
+            ]
+        ]
+    },
+    {
+        "id": "0b2251944a2d4aa7",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "Start bike 2",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "heiafr/ms/bike/2/start",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "1",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 670,
+        "y": 800,
+        "wires": [
+            [
+                "df8a527c4243b8f9"
+            ]
+        ]
+    },
+    {
+        "id": "75e6c0d512140f11",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "Reset Power",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "heiafr/ms/top/power",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 690,
+        "y": 1560,
+        "wires": [
+            [
+                "264d8d59c65e843a"
+            ]
+        ]
+    },
+    {
+        "id": "3bdf92313ac42f6d",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "Reset Energy",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "heiafr/ms/top/energy",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 700,
+        "y": 1600,
+        "wires": [
+            [
+                "264d8d59c65e843a"
+            ]
+        ]
+    },
+    {
+        "id": "b07711d543116dc1",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "Reset Speed",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "heiafr/ms/top/speed",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 690,
+        "y": 1640,
+        "wires": [
+            [
+                "264d8d59c65e843a"
+            ]
+        ]
+    },
+    {
+        "id": "4f7e53f4ed4bb1a5",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "Reset Power",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "heiafr/ms/top/power",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 670,
+        "y": 120,
+        "wires": [
+            [
+                "df8a527c4243b8f9"
+            ]
+        ]
+    },
+    {
+        "id": "b6fe2ad0405fef4f",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "Reset Energy",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "heiafr/ms/top/energy",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 680,
+        "y": 160,
+        "wires": [
+            [
+                "df8a527c4243b8f9"
+            ]
+        ]
+    },
+    {
+        "id": "508815e579c49bf0",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "Reset Speed",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "heiafr/ms/top/speed",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 670,
+        "y": 200,
+        "wires": [
+            [
+                "df8a527c4243b8f9"
+            ]
+        ]
+    },
+    {
+        "id": "e4f459b887ac8e50",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "Start firework",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "heiafr/ms/top/firework",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "1",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 770,
+        "y": 2220,
+        "wires": [
+            [
+                "252d787468234489"
+            ]
+        ]
+    },
+    {
+        "id": "93a12bedba0f37d5",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "Stop firework",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "heiafr/ms/top/firework",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "0",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 690,
+        "y": 1520,
+        "wires": [
+            [
+                "264d8d59c65e843a"
+            ]
+        ]
+    },
+    {
+        "id": "71dc21dd51b38a6c",
+        "type": "change",
+        "z": "1b31f175e8f2bfb7",
+        "name": "Stop firework",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "heiafr/ms/top/firework",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "0",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 670,
+        "y": 500,
+        "wires": [
+            [
+                "df8a527c4243b8f9"
+            ]
+        ]
     },
     {
         "id": "ad4208024022ceec",
