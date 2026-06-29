@@ -6,144 +6,126 @@
 }
 
 body {
-    background: black;
-    margin: 0;
-    cursor: none;
-}
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #000;
+      color: white;        /* default text color white */
+      margin: 0;
+      cursor: none;
+    }
+    .dashboardWrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* centers children horizontally */
+      z-index: 1; /* above fireworks but below countdown */
+      width: 100%;
+      margin: 20px;              /* 20px margin on all sides */
+      box-sizing: border-box;    /* ensures padding/margin works predictably */
+    }
+    #timer-bar {
+      margin-bottom: 20px;   /* spacing above dashboard */
+      font-size: 40px;
+      font-weight: bold;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 10px 20px;
+      border-radius: 0 0 10px 10px;
+      width: 100%; 
+      text-align: center;
+    }
+    
+    .dashboard {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 30px;
+      width: 100%;
+    }
+    .box-wrapper {
+      text-align: center;
+      margin-top: 30px;
+    }
 
-.content {
-    position: absolute;
-    display: flex;
-    width: 1024px;
-    height: 384px;
-    font-family: DinOT, Arial, Helvetica, sans-serif;
-}
+    .box-title {
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #e74c3c;
+      font-size: 22px;
+    }
 
-.video-container {
-    position: absolute;
-    left: 256px;
-    right: 0;
-    width: 768px;
-    height: 384px;
-}
+    .box {
+      border: 4px solid #e74c3c;
+      border-radius: 10px;
+      text-align: center;
+      padding: 30px;
+      position: relative;
+      overflow: hidden;
+      height: 150px;
+    }
 
-.game-container {
-    position: absolute;
-    left: 0;
-    right: 0;
-    width: 256px;
-    height: 384px;
-    color: white;
-}
+    .box-fill {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0;
+      background: rgba(231, 76, 60, 0.3);
+      transition: height 0.5s ease;
+    }
 
-.game-inside {
-    position: absolute;
-    width: 256px;
-    height: 384px;
-    top: 0;
-    left: 0;
-}
+    .box-value {
+      position: relative;
+      font-size: 40px;
+      font-weight: bold;
+      margin-top: 30px;
+      z-index: 1;
+    }
+    svg {
+      width: 100%;
+      height: auto;
+    }
+    .gauge-title {
+      font-weight: bold;
+      text-anchor: middle;
+      fill: white;   /* make titles visible */
+    }
+    .gauge-value {
+      font-size: 20px;
+      font-weight: bold;
+      text-anchor: middle;
+      fill: white;   /* values white too */
+    }
+    .gauge-unit {
+      font-size: 16px;
+      text-anchor: middle;
+      fill: #D3D3D3;
+      font-weight: bold;
+    }
+    #countdown{
+      display: none;
+      font-size: 250px; 
+      color: white; 
+      text-align: center; 
+      position: absolute; 
+      top: 50%; 
+      left: 50%; 
+      transform: translate(-50%, -50%);
+      z-index: 2; /* above fireworks */
+    }
 
-#video {
-    z-index: 2;
-}
+    #fireworks {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0; /* behind everything */
+      background: black;
+    }
+    #game-container {
+      position: absolute;
+      width: 1024px;
+      height: 384px;
+    }
 
-#game {
-    z-index: 1;
-}
 
-#bg-image-container {
-    z-index: 2;
-    opacity: 1;
-}
-
-#vs-container {
-    z-index: 3;
-    width: 100%;
-    color: #aca39a;
-    margin-top: 10px;
-    font-size: 18pt;
-    font-weight: bold;
-    text-align: center;
-    height: auto;
-}
-
-#teams-container {
-    display: flex;
-    z-index: 3;
-    width: 100%;
-    margin-top: 10px;
-    padding-left: 2px;
-    padding-right: 2px;
-    font-size: 18pt;
-    font-weight: bold;
-    text-align: center;
-    height: auto;
-}
-
-#team {
-    width: 50%;
-    color: #007cb7;
-    text-align: center;
-}
-
-#levels-container {
-    display: flex;
-    z-index: 4;
-    width: 100%;
-    margin-top: 260px;
-    font-size: 24pt;
-    font-weight: bold;
-    text-align: center;
-    color: white;
-    height: auto;
-    padding-left: 4px;
-    padding-right: 4px;
-}
-
-#level {
-    width: 100%;
-    text-align: center;
-}
-
-#timer-container {
-    z-index: 5;
-}
-
-#animation-container {
-    z-index: 10;
-}
-
-#score-container {
-    z-index: 11;
-}
-
-#timer {
-    font-size: 22pt;
-    font-weight: bold;
-    margin-top: 340px;
-    text-align: center;
-}
-
-#score {
-    font-size: 22pt;
-    font-weight: bold;
-    margin-top: 320px;
-    text-align: center;
-    display: none;
-}
-
-#gauges-container {
-    z-index: 1;
-    display: flex;
-    height: 239px;
-    margin-top: 78px;
-    width: 100%;
-}
-
-#gauge {
-    height: 0%;
-    margin-top: auto;
-    width: 100%;
-    background-color: #007cb7;
-}

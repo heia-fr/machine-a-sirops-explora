@@ -1,110 +1,214 @@
+
+// setting gauges
+// Variables for saving the Power, Energy & speed
+
+let varPower = 0;
+let varEnvergy = 0;
+let varSpeed = 0;
+
+const maxValueE = 5000;
+const maxValueP = 1000;
+const maxValueSP = 60;
+
+const arcE = document.getElementById("energy-arc");
+const valueTextE = document.getElementById("energy-value");
+
+const arcP = document.getElementById("power-arc");
+const valueTextP = document.getElementById("power-value");
+
+const arcSP = document.getElementById("speed-arc");
+const valueTextSP = document.getElementById("speed-value");
+
+
+// Helper: convert value to angle (0 to 180 degrees)
+function valueToAngle(value, maxValue) {
+  return (value / maxValue) * Math.PI;
+}
+
+// Helper: describe an arc path in SVG
+function describeArc(x, y, radius, startAngle, endAngle) {
+  let end = distCal(x, y, radius, endAngle);
+  let largeArcFlag = endAngle - startAngle <= 180 ? "0" : "1";
+  return [
+    "M", 20, 100, //"M", start.x, start.y,
+    "A", radius, radius, 0, largeArcFlag, 1, end.x, end.y
+  ].join(" ");
+}
+
+function distCal(centerX, centerY, radius, angleInRad) {
+  return {
+    x: centerX - (radius * Math.cos(angleInRad)),
+    y: centerY - (radius * Math.sin(angleInRad))
+  };
+}
+
+// Update functions
+function updateEnergy(value, maxValue) {
+  if (value < 0) value = 0;
+  if (value > maxValue) value = maxValue;
+
+  let endAngle = valueToAngle(value, maxValue);
+  arcE.setAttribute("d", describeArc(100, 100, 80, 0, endAngle));
+
+  valueTextE.textContent = value;
+}
+
+function updatePower(value, maxValue) {
+  if (value < 0) value = 0;
+  if (value > maxValue) value = maxValue;
+
+  let endAngle = valueToAngle(value, maxValue);
+  arcP.setAttribute("d", describeArc(100, 100, 80, 0, endAngle));
+
+  valueTextP.textContent = value;
+}
+
+function updateSpeed(value, maxValue) {
+  if (value < 0) value = 0;
+  if (value > maxValue) value = maxValue;
+
+  let endAngle = valueToAngle(value, maxValue);
+  arcSP.setAttribute("d", describeArc(100, 100, 80, 0, endAngle));
+
+  valueTextSP.textContent = value;
+}
+
+function updateAvancee(value) {
+  if (value < 0) value = 0;
+  if (value > 100) value = 100;
+
+  const box = document.getElementById("avancee-box");
+  const fill = document.getElementById("avancee-fill");
+  const text = document.getElementById("avancee-value");
+
+  // update fill height
+  fill.style.height = value + "%";
+
+  // update number
+  text.textContent = value + "%";
+
+  // change colors if 100%
+  if (value === 100) {
+    fill.style.background = "rgba(46, 204, 113, 0.6)"; // green fill
+    box.style.borderColor = "#2ecc71"; // green border
+  } else {
+    fill.style.background = "rgba(231, 76, 60, 0.3)"; // red fill
+    box.style.borderColor = "#e74c3c"; // red border
+  }
+}
+
+// Countdown
+function countdown () {
+  let count = 5;
+  const countdownEl = document.getElementById('countdown');
+  const dashboard = document.querySelector('.dashboardWrapper');
+  dashboard.style.display = 'none';
+  countdownEl.style.display = 'flex';   
+  countdownEl.textContent = 5;
+
+  const countdownInterval = setInterval(() => {count--;
+    if (count > 0) {
+      countdownEl.textContent = count;
+    } else {
+      clearInterval(countdownInterval);
+      countdownEl.style.display = 'none';   // hide countdown
+      // Start fade-in for dashboard
+      dashboard.style.opacity = 0;
+      dashboard.style.display = 'flex';
+      const fadeIn = setInterval(() => {
+        let op = parseFloat(dashboard.style.opacity);
+        if (op < 1) {
+          dashboard.style.opacity = op + 0.05;
+        } else {
+          clearInterval(fadeIn);
+        }
+      }, 30);
+    }
+  }, 1000); // every 1 second
+}
+
+
+
+// Set Up the fireworks
+const canvas = document.getElementById('fireworks');
+const ctx = canvas.getContext('2d');
+let particles = [];
+let animationId;  // store the loop ID
+
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
+
+function random(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+function createFirework(x, y) {
+  const colors = ['#ff0043', '#14fc56', '#1e90ff', '#ffff00', '#ff9900', '#ff66cc'];
+  for (let i = 0; i < 100; i++) {
+    particles.push({
+      x,
+      y,
+      angle: Math.random() * 2 * Math.PI,
+      speed: random(2, 6),
+      radius: random(2, 4),
+      alpha: 1,
+      color: colors[Math.floor(Math.random() * colors.length)]
+    });
+  }
+}
+
+function animateFireworks() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  particles.forEach((p, i) => {
+    p.x += Math.cos(p.angle) * p.speed;
+    p.y += Math.sin(p.angle) * p.speed;
+    p.alpha -= 0.01;
+
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.radius, 0, 2 * Math.PI);
+    ctx.fillStyle = `rgba(${hexToRgb(p.color)},${p.alpha})`;
+    ctx.fill();
+
+    if (p.alpha <= 0) particles.splice(i, 1);
+  });
+
+  animationId = requestAnimationFrame(animateFireworks);
+}
+
+function hexToRgb(hex) {
+  const bigint = parseInt(hex.replace('#',''), 16);
+  const r = (bigint >> 16) & 255;
+  const g = (bigint >> 8) & 255;
+  const b = bigint & 255;
+  return `${r},${g},${b}`;
+}
+
+// launch fireworks every 1.5s
+setInterval(() => {
+  createFirework(random(100, canvas.width - 100), random(100, canvas.height - 200));
+}, 1500);
+
+// resetting screen 
+function stopFirework(){
+  cancelAnimationFrame(animationId);
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  particles = [];
+}
+
+
+
+
+// Timing for Chrono
 let startTime = Date.now() // Used for chrono
 let interval // Used for chrono
 const durationActive = {}
 
-function play_video(obj) {
-  console.log('Playing video : ', obj)
-  let video_id = '#video'
-  if ('id' in obj) {
-    video_id = '#' + obj['id']
-  }
-  const v = $(video_id).first()
-
-  const doPlay = function () {
-    v.attr('src', obj.src)
-    v.attr('currentTime', 0)
-    $.each(v, function (_, i) {
-      i.load()
-    })
-
-    if (obj.volume > 0) {
-      v.attr('volume', obj.volume)
-    }
-    $.each(v, function (_, i) {
-      i.play()
-    })
-  }
-
-  const doStop = function () {
-    $.each(v, function (_, i) {
-      i.pause()
-    })
-    v.attr('currentTime', 0)
-  }
-
-  if (obj.loop) {
-    v.attr('loop', true)
-  } else {
-    v.removeAttr('loop')
-  }
-
-  let fadeIn = 200
-  if ('fade-in' in obj) fadeIn = obj['fade-in'] * 1000
-  let prevFadeOut = 200
-  if ('prev-fade-out' in obj) prevFadeOut = obj['prev-fade-out'] * 1000
-  let fadeOut = 0
-  if ('fade-out' in obj) fadeOut = obj['fade-out'] * 1000
-  let duration = 0
-  if ('duration' in obj) duration = obj.duration * 1000
-
-  if (durationActive[video_id] !== undefined) {
-    clearTimeout(durationActive[video_id])
-    durationActive[video_id] = undefined
-  }
-  v.stop(true, true)
-  v.clearQueue()
-
-  if (fadeOut > 0 && duration > fadeIn + fadeOut) {
-    v.fadeOut(prevFadeOut, doPlay).fadeIn(fadeIn)
-    durationActive[video_id] = setTimeout(() => {
-      v.fadeOut(fadeOut, function () {
-        doStop()
-        durationActive[video_id] = undefined
-      })
-    }, duration - fadeIn - fadeOut)
-  } else if (fadeOut > 0) {
-    v.fadeOut(prevFadeOut, doPlay).fadeIn(fadeIn).fadeOut(fadeOut, doStop)
-  } else {
-    v.fadeOut(prevFadeOut, doPlay).fadeIn(fadeIn)
-  }
-}
-
-function stop_video(obj) {
-  console.log('Stopping video')
-  let video_id = '#video'
-  if ('id' in obj) {
-    video_id = '#' + obj['id']
-  }
-  const v = $(video_id).first()
-
-  const doStop = function () {
-    $.each(v, function (_, i) {
-      i.pause()
-    })
-    v.attr('currentTime', 0)
-  }
-
-  let fadeOut = 200
-  if ('fade-out' in obj) fadeOut = obj['fade-out'] * 1000
-
-  if (durationActive[video_id] !== undefined) {
-    clearTimeout(durationActive[video_id])
-    durationActive[video_id] = undefined
-  }
-
-  v.fadeOut(fadeOut, doStop)
-}
-
-function start_game(obj) {
-  console.log('Starting game')
-}
-
-// ----- Teams -----
-
-function set_teams(teama, teamb) {
-  $('#team-left').html(teama)
-  $('#team-right').html(teamb)
-}
 
 // ----- Gauges -----
 
@@ -116,19 +220,21 @@ function set_gauge(value) {
 // ----- Chrono -----
 
 function start_chrono() {
-  startTime = Date.now()
+  startTime = Date.now();
   if (interval !== undefined) {
-    clearInterval(interval)
+    clearInterval(interval);
   }
   interval = setInterval(function () {
-    const elapsedTime = Date.now() - startTime
-    $('#timer-value').html(
-      luxon.DateTime.fromMillis(elapsedTime).toFormat('mm:ss.uu')
-    )
-    $('#score-value').html(
-      luxon.DateTime.fromMillis(elapsedTime).toFormat('mm:ss.uu')
-    )
-  })
+    const elapsedTime = Date.now() - startTime;
+    const formatted = luxon.DateTime.fromMillis(elapsedTime).toFormat('mm:ss.uu');
+
+    // update the timer bar
+    $('#timer-bar').html(formatted);
+
+    // keep your other updates if needed
+    $('#timer-value').html(formatted);
+    $('#score-value').html(formatted);
+  }, 10); // update every 10 ms for smoothness
 }
 
 function stop_chrono() {
@@ -138,10 +244,14 @@ function stop_chrono() {
 }
 
 function reset_chrono() {
-  stop_chrono()
-  $('#timer-value').html(luxon.DateTime.fromMillis(0).toFormat('mm:ss.uu'))
-  $('#score-value').html(luxon.DateTime.fromMillis(0).toFormat('mm:ss.uu'))
+  stop_chrono();
+  const formatted = luxon.DateTime.fromMillis(0).toFormat('mm:ss.uu');
+  $('#timer-bar').html(formatted);
+  $('#timer-value').html(formatted);
+  $('#score-value').html(formatted);
 }
+
+
 
 // MQTT client
 
@@ -160,12 +270,9 @@ function init_client() {
     console.log('Connected to broker')
     console.log('Subscribing to topic:', base_topic + '#')
     client.subscribe(base_topic + '#', { qos: 1 })
+    console.log("base_topic ", base_topic)
   })
 
-  const v = $('#video')
-  v[0].addEventListener('ended', (event) => {
-    client.publish(base_topic + '/video/ended', 'true')
-  })
 
   client.on('message', function (topic, message) {
     console.log(
@@ -183,13 +290,27 @@ function init_client() {
       obj = {}
     }
 
-    // console.log("Parsed message:", obj);
+    console.log("Parsed message:", obj);
     switch (topic) {
       case base_topic + 'reload':
         location.reload(true)
         break
       case base_topic + 'gauge':
-        set_gauge(obj.value)
+        //set_gauge(obj.value)
+        updateAvancee(obj.value)
+        break
+      case base_topic + 'power':
+        varPower = obj;
+        console.log("Power: ", varPower)
+        updatePower(varPower, maxValueP);
+        break
+      case base_topic + 'energy':
+        varEnvergy = obj;
+        updateEnergy(varEnvergy, maxValueE);
+        break
+      case base_topic + 'speed':
+        varSpeed = obj;
+        updateSpeed(varSpeed, maxValueSP);
         break
       case base_topic + 'chrono/start':
         start_chrono()
@@ -200,17 +321,17 @@ function init_client() {
       case base_topic + 'chrono/reset':
         reset_chrono()
         break
+      case base_topic + 'firework':
+        if (obj == 1){
+          animateFireworks();
+        }
+        if (obj == 0){
+          stopFirework();
+        }
+        break
       case base_topic + 'video/play':
-        play_video(obj)
-        break
-      case base_topic + 'video/stop':
-        stop_video(obj)
-        break
-      case base_topic + 'score/show':
-        $('#score').fadeIn('fast')
-        break
-      case base_topic + 'score/hide':
-        $('#score').fadeOut('fast')
+        //play_video(obj)
+        countdown();
         break
       default:
         console.log('Unknown topic:', topic)
@@ -218,3 +339,7 @@ function init_client() {
     }
   })
 }
+
+
+
+

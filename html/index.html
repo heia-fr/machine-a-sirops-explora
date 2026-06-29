@@ -5,59 +5,114 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Machine a Sirops</title>
-    <link rel="stylesheet" href="/css/reset.css">
+    <!--<link rel="stylesheet" href="/css/reset.css">-->
     <link rel="stylesheet" href="/css/site.css">
 
 </head>
 
 <body>
-    <div class="content">
-        <div class="game-container">
-            <div id="gauges-container" class="game-inside">
-                <div id="gauge">
-                </div>
-            </div>
+  <div id="game-container"></div>
+    <!-- Fireworks canvas (background) -->
+    <canvas id="fireworks"></canvas>
 
-            <div id="bg-image-container" class="game-inside">
-                <img id="bg-image" src="img/pile-1.png" />
-            </div>
-
-            <div id="vs-container" class="game-inside">
-
-            </div>
-
-
-            <div id="levels-container" class="game-inside">
-                <div id="level"></div>
-            </div>
-
-            <div id="timer-container" class="game-inside">
-                <div id="timer">
-                    <span id="timer-value">--</span>
-                </div>
-            </div>
-
-            <div id="animation-container" class="game-inside">
-                <video id="animation" muted>
-                    <source src="" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-
-            <div id="score-container" class="game-inside">
-                <div id="score">
-                    <span id="score-value">--</span>
-                </div>
-            </div>
-        </div>
-        <div class="video-container">
-            <video id="video" autoplay muted loop>
-                <source src="/movie/panels.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
+    <!-- Countdown container -->
+    <div id="countdown">
+      5
     </div>
-    <script src="/js/jquery-3.7.1.min.js"></script>
+    <div class="dashboardWrapper">
+      <div id="timer-bar">00:00.00</div>
+      <div class="dashboard">
+        <!-- Avancée -->
+        <div class="box-wrapper">
+          <div class="box-title">Avancée</div>
+          <div class="box" id="avancee-box">
+            <div class="box-fill" id="avancee-fill"></div>
+            <div class="box-value" id="avancee-value">0%</div>
+          </div>
+        </div>
+
+
+        <!-- Energie -->
+        <svg id="energy" viewBox="0 0 200 120">
+          <!-- Background arc -->
+          <path d="M 20 100 A 80 80 0 0 1 180 100"
+                stroke="#eee" stroke-width="15" fill="none"/>
+
+          <!-- Foreground arc (value) -->
+          <path id="energy-arc"
+                d="M 20 100 A 80 80 0 0 1 20 100"
+                stroke="#2ecc71" stroke-width="15" fill="none" stroke-linecap="round"/>
+
+          <!-- Title -->
+          <text x="100" y="52" class="gauge-title">Energie</text>
+
+          <!-- Value -->
+          <text id="energy-value" x="100" y="80" class="gauge-value">0</text>
+          <text x="100" y="95" class="gauge-unit">Cal</text>
+
+          <!-- Min / Max -->
+          <text x="20" y="115" font-size="12">0</text>
+          <text x="180" y="115" font-size="12" text-anchor="end">5000</text>
+        </svg>
+
+        <!-- Puissance -->
+        <svg id="power" viewBox="0 0 200 120">
+          <!-- Background arc -->
+          <path d="M 20 100 A 80 80 0 0 1 180 100"
+                stroke="#eee" stroke-width="15" fill="none"/>
+
+          <!-- Zones -->
+          <path d="M 5 100 A 95 95 0 0 1 48 20"
+                stroke="#2ecc71" stroke-width="10" fill="none"/>
+          <path d="M 49 19 A 95 95 0 0 1 151 19"
+                stroke="#f1c40f" stroke-width="10" fill="none"/>
+          <path d="M 152 20 A 95 95 0 0 1 195 100"
+                stroke="#e74c3c" stroke-width="10" fill="none"/>
+
+          <!-- Value arc -->
+          <path id="power-arc"
+                d="M 20 100 A 80 80 0 0 1 20 100"
+                stroke="gray" stroke-width="15" fill="none" stroke-linecap="round"/>
+
+          <!-- Title -->
+          <text x="100" y="52" class="gauge-title">Puissance</text>
+          <text id="power-value" x="100" y="80" class="gauge-value">0</text>
+          <text x="100" y="95" class="gauge-unit">W</text>
+          <text x="20" y="115" font-size="12">0</text>
+          <text x="180" y="115" font-size="12" text-anchor="end">1000</text>
+        </svg>
+
+        <!-- Vitesse -->
+        <svg id="velocity" viewBox="0 0 200 120">
+          <!-- Background arc -->
+          <path d="M 20 100 A 80 80 0 0 1 180 100"
+                stroke="#eee" stroke-width="15" fill="none"/>
+
+          <!-- Zones -->
+          <path d="M 5 100 A 95 95 0 0 1 48 20"
+                stroke="#2ecc71" stroke-width="10" fill="none"/>
+          <path d="M 49 19 A 95 95 0 0 1 151 19"
+                stroke="#f1c40f" stroke-width="10" fill="none"/>
+          <path d="M 152 20 A 95 95 0 0 1 195 100"
+                stroke="#e74c3c" stroke-width="10" fill="none"/>
+
+          <!-- Value arc -->
+          <path id="speed-arc"
+                d="M 20 100 A 80 80 0 0 1 20 100"
+                stroke="gray" stroke-width="15" fill="none" stroke-linecap="round"/>
+
+          <!-- Title -->
+          <text x="100" y="52" class="gauge-title">Vitesse</text>
+          <text id="speed-value" x="100" y="80" class="gauge-value">0</text>
+          <text x="100" y="95" class="gauge-unit">km/h</text>
+          <text x="20" y="115" font-size="12">0</text>
+          <text x="180" y="115" font-size="12" text-anchor="end">60</text>
+        </svg>
+
+      </div>
+    </div>
+  </div>
+  <script src="/js/jquery-3.7.1.min.js"></script>
     <script src="/js/luxon.min.js"></script>
     <script src="/js/mqtt.min.js"></script>
     <script src="/js/site.js"></script>
@@ -69,6 +124,8 @@
 
         });
     </script>
+    
 </body>
+
 
 </html>
